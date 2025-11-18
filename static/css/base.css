@@ -1,0 +1,147 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Archivo', sans-serif;
+    background-color: #f9f3ec;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 84px; 
+    line-break: 1.5;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+p.subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+/* Navigation Bar */
+.custom-nav {
+    background-color: #f9f3ec !important;
+    height: 64px;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #222 !important;
+}
+
+#nav-banner {
+    background-color: #79b4e2;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.nav-link {
+    color: #222 !important;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav-item:hover .nav-link {
+    color: #ec4e20 !important;
+    background-color: transparent !important;
+}
+
+/* Buttons */
+.fn-shop, .form-btn {
+    background-color: #222 !important;
+    color: #ffffff;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.fn-shop:hover, .form-btn:hover {
+    background-color: #444 !important;
+}
+
+.fn-shop {
+    padding: 12px 24px;
+}
+
+.form-btn {
+    padding: 6px 12px;
+}
+
+/* Footer */
+.custom-footer {
+    background-color: #ec4e20 !important;
+    color: #ffffff !important;
+    font-family: 'Archivo', sans-serif;
+    flex-shrink: 0;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.f-text {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #f9f3ec;
+    text-align: center;
+    border-color: #adabab;
+    border-radius: 4px;
+}
+
+.dropdown-item:hover {
+    background-color:#f9f3ec;
+    color:#ec4e20
+}
+/* Media Queries */
+@media (max-width: 768px) {  
+    .navbar .navbar-collapse {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background-color: #f9f3ec;
+        padding: 1rem;
+        z-index: 1050;
+    }
+
+    .dropdown-menu {
+        border: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .fn-shop, .form-btn {
+        width: 100%;
+    }
+    .navbar-nav {
+        gap: 0.5rem;
+    }
+}
