@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount','home',
+    'allauth.socialaccount','cloudinary',
+    'home',
     'products',
 ]
 
