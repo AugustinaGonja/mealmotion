@@ -18,12 +18,12 @@
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-2 gap-lg-3 text-center align-items-center">
         <!-- Dropdown 1 -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown"
+          <a class="nav-link dropdown-toggle" href="{% url 'products' %}" id="shopDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Fitness & Nutrition Shop
           </a>
           <ul class="dropdown-menu" aria-labelledby="shopDropdown">
-            <li><a class="dropdown-item" href="#">All Products</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>

@@ -6,8 +6,11 @@ from .models import Product,Category
 def product_list(request):
     """ View to display list of products."""
     products = Product.objects.all()
+    total_products = products.count()
+
     context = {
         'products': products,
+        'total_products': total_products,
     }
     return render(request, 'products/products.html', context)
 

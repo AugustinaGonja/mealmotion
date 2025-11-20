@@ -56,6 +56,7 @@ p.subtitle {
     left: 0;
     width: 100%;
     height: auto;
+    z-index: 1050;
 }
 
 .nav-link {
@@ -120,6 +121,14 @@ p.subtitle {
     background-color:#f9f3ec;
     color:#ec4e20
 }
+
+/* Products */
+.product-image {
+    width: 100%;         
+    height: 350px;;        
+    object-fit:fill;    
+}
+
 /* Media Queries */
 @media (max-width: 768px) {  
     .navbar .navbar-collapse {
