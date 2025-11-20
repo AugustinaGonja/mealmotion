@@ -18,6 +18,9 @@ class Product(models.Model):
         return self.category.friendly_name
     
 class Category(models.Model):
+    class Meta:
+        verbose_name_plural = 'Categories'
+        
     name = models.CharField(max_length=255)
     friendly_name = models.CharField(max_length=255, null=True, blank=True)
 
