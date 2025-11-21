@@ -7,54 +7,61 @@
     <div class="mb-4 text-center">
         <h1>All Products</h1>
         <p>
-            <strong>{{ total_products }} Products</strong>
+            <small>{{ total_products }} Products</small>
         </p>
     </div>
 
     <!--Sort and Filter Buttons-->
-    <div class="d-flex justify-content-between">
+    <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
 
-        <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn rounded-1 fn-shop dropdown-toggle text-uppercase" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             Filter By Category
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li class="text-center dropdown-heading">Filter</li><hr>
+            <li><a class="dropdown-item" href="#">Supplements</a></li>
+            <li><a class="dropdown-item" href="#">Hydration</a></li>
+            <li><a class="dropdown-item" href="#">Fitness Equipment</a></li>
+            <li><a class="dropdown-item" href="#">Kitchen Tools</a></li>
         </ul>
 
         <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             Sort By
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li class="text-center dropdown-heading">Sort</li><hr>
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
-        
     </div>
 </div>
 
 <div class="container">
     <div class="row">
         {% for product in products %}
-        <div class="col-md-3 mb-4 d-flex flex-column">
-            <img src="{{ product.image_url }}" class="product-image mb-2" alt="{{ product.name }}">
-            <div class="d-flex justify-content-between align-items-center mb-1">
-                <h5 class="fs-5 mb-0">{{ product.name }}</h5>
-                <div class="d-flex align-items-center">
-                    <small>
-                        <strong class="me-1"><i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                        {{ product.rating }} / 5
-                        </strong>
-                    </small>
+        <div class="col-md-3 mb-4">
+            <!--Container conents wrapped in link to product details-->
+            <a href="{% url 'product_details' product.id %}" class="text-dark text-decoration-none d-block">
+                <div class="category-badge">
+                        {{ product.category.friendly_name }}
                 </div>
-            </div>
-            
-            <p class="mb-2 fs-6 text-muted product-description">{{ product.description }}</p>
-            <p class="fw-bold mb-2 fs-6">£ {{ product.price }}</p>
-
-            <a href="{% url 'product_details' product.id %}" class="btn btn-sm w-100 fs-6 mt-auto fn-shop">View Details</a>
+                <img src="{{ product.image_url }}" class="product-image w-100" alt="{{ product.name }}">
+                <!--Product Info-->
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <h5 class="fs-5 mb-0">{{ product.name }}</h5>
+                    <div class="d-flex align-items-center">
+                        <small>
+                            <strong class="me-1">
+                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
+                                {{ product.rating }} / 5
+                            </strong>
+                        </small>
+                    </div>
+                </div>
+                <p class="mb-2 fs-6 text-muted product-description">{{ product.description }}</p>
+                <p class="fw-bold fs-6">£ {{ product.price }}</p>
+            </a>
         </div>
         {% endfor %}
     </div>
