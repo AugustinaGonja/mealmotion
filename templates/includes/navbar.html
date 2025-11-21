@@ -61,7 +61,14 @@
 
       <!-- Nav Icons -->
       <div class="d-none d-lg-flex ms-auto align-items-center gap-3">
-        <a href="" class="text-reset me-2"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
+        <form method="GET" action="{% url 'products' %}" class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-end gap-2">
+          <div class="input-group input-group-sm">
+            <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
+            <button class="btn btn-outline-success text-uppercase form-btn" type="submit">
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            </button>
+          </div>
+        </form>
         <a href="" class="text-reset me-2"><i class="fa-solid fa-user fa-lg"></i></a>
         <a href="" class="text-reset me-2"><i class="fa-solid fa-bag-shopping fa-lg"></i></a>
       </div>
