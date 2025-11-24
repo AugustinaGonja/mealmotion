@@ -5,36 +5,71 @@
 
 <div class="container my-5">
     <div class="mb-4 text-center">
+        {% if not current_categories %}
         <h1>Products</h1>
+        {% else %}
+        <h1 class="text-center">{{ category_objects.first.friendly_name }}</h1>
+        {% endif %}
         <p>
-            <small>{{ total_products }} Products</small>
+            {% if search_term or current_categories or current_sorting != 'None_None'%}
+            <span><a class="link-offset-1" href="{% url 'products' %}">Fitness & Nutrition Home</a>|</span>
+            {% endif %}
+            {{total_products}} Products {% if search_term %} found for "{{search_term}}"{% endif %}
         </p>
     </div>
+    <hr>
 
     <!--Sort and Filter Buttons-->
     <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
 
-        <button class="btn rounded-1 fn-shop dropdown-toggle text-uppercase" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn rounded-1 fn-shop dropdown-toggle text-uppercase" type="button" id="sortDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
             Filter By Category
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li class="text-center dropdown-heading">Filter</li><hr>
+            <li class="text-center dropdown-heading">Filter</li>
+            <hr>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplements</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a>
+            </li>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
         </ul>
 
-        <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            Sort By
+        <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            {% if not request.GET.sort %}
+                Sort By . . .
+            {% else %}
+                Sort By | 
+                {% if request.GET.sort == "category" %}
+                    Category ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
+                {% elif request.GET.sort == "name" %}
+                    Name ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
+                {% elif request.GET.sort == "price" %}
+                    Price ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
+                {% elif request.GET.sort == "rating" %}
+                    Rating
+                {% endif %}
+            {% endif %}
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li class="text-center dropdown-heading">Sort</li><hr>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc"><strong>Price:</strong>Low-High</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc"><strong>Price:</strong>High-Low</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc"><strong>Alphabetically:</strong>A-Z</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc"><strong>Category</strong></a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc"><strong>Rating</strong></a></li>
+            <li class="text-center dropdown-heading">Sort</li>
+            <hr>
+            <li><a class="dropdown-item"
+                    href="{% url 'products' %}?sort=category&direction=asc"><strong>Category</strong> (A-Z)</a></li>
+            <li><a class="dropdown-item"
+                    href="{% url 'products' %}?sort=category&direction=desc"><strong>Category</strong> (Z-A)</a></li>
+            <li><a class="dropdown-item"
+                    href="{% url 'products' %}?sort=name&direction=asc"><strong>Name</strong> (A-Z)</a></li>
+            <li><a class="dropdown-item"
+                    href="{% url 'products' %}?sort=name&direction=desc"><strong>Name</strong> (Z-A)</a></li>
+            <li><a class="dropdown-item"
+                    href="{% url 'products' %}?sort=price&direction=asc"><strong>Price</strong> (Low-High)</a></li>
+            <li><a class="dropdown-item"
+                    href="{% url 'products' %}?sort=price&direction=desc"><strong>Price</strong> (High-Low)</a></li>
+            <li><a class="dropdown-item"
+                    href="{% url 'products' %}?sort=rating&direction=desc"><strong>Rating</strong></a></li>
         </ul>
     </div>
 </div>
@@ -46,7 +81,7 @@
             <!--Container conents wrapped in link to product details-->
             <a href="{% url 'product_details' product.id %}" class="text-dark text-decoration-none d-block">
                 <div class="category-badge">
-                        {{ product.category.friendly_name }}
+                    {{ product.category.friendly_name }}
                 </div>
                 <img src="{{ product.image_url }}" class="product-image w-100" alt="{{ product.name }}">
                 <!--Product Info-->

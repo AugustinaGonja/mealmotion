@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow-sm custom-nav">
   <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
       <img src="..." alt="Logo" width="30" height="24" class="me-2 d-inline-block align-text-top">
       Mealmotion
     </a>
@@ -16,6 +16,8 @@
     <!-- Collapsible Content -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto my-4 mb-lg-0 gap-2 gap-lg-3 text-center align-items-center">
+        <!--Home Link-->
+        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
         <!-- Dropdown 1 -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{% url 'products' %}" id="shopDropdown" role="button" data-bs-toggle="dropdown"
