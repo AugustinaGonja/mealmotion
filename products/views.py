@@ -6,12 +6,21 @@ from .models import Product,Category
 # Create your views here.
 
 def product_list(request):
-    """ View to display list of products."""
+    """ View to display list of products , enabling both search and filter functionality."""
+    
     products = Product.objects.all()
     total_products = products.count()
     query = None
+    category_names = []
+    category_objects = Category.objects.none()
     
-    if request.GET:
+    if 'category' in request.GET:
+        category_names = request.GET['category'].split(',')
+        products = products.filter(category__name__in=category_names)
+        category_objects = Category.objects.filter(name__in=category_names)
+        total_products = products.count()
+
+    if 'q' in request.GET:
         query = request.GET.get('q')
         if not query:
             messages.error(request, "You didn't enter any search criteria!")
@@ -25,6 +34,8 @@ def product_list(request):
         'products': products,
         'total_products': total_products,
         'search_term': query,
+        'current_categories': category_names,
+        'category_objects': category_objects,
     }
     return render(request, 'products/products.html', context)
 

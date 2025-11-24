@@ -19,10 +19,10 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
             <li class="text-center dropdown-heading">Filter</li><hr>
-            <li><a class="dropdown-item" href="#">Supplements</a></li>
-            <li><a class="dropdown-item" href="#">Hydration</a></li>
-            <li><a class="dropdown-item" href="#">Fitness Equipment</a></li>
-            <li><a class="dropdown-item" href="#">Kitchen Tools</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplements</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
         </ul>
 
         <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">

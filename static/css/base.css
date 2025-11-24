@@ -70,7 +70,6 @@ p.subtitle {
     color: #ec4e20 !important;
     background-color: transparent !important;
 }
-
 /* Buttons */
 .fn-shop, .form-btn {
     background-color: #333533 !important;
@@ -187,6 +186,7 @@ p.subtitle {
         background-color: #f9f3ec;
         padding: 1rem;
         z-index: 1050;
+        box-shadow: 0 4px 4px #333533;
     }
     .dropdown-nav-mobile {
     border: none;
