@@ -56,7 +56,7 @@ p.subtitle {
     left: 0;
     width: 100%;
     height: auto;
-    z-index: 1050;
+    z-index: 999;
 }
 
 .nav-link {
@@ -70,6 +70,8 @@ p.subtitle {
     color: #ec4e20 !important;
     background-color: transparent !important;
 }
+
+
 /* Buttons */
 .fn-shop, .form-btn {
     background-color: #333533 !important;
@@ -81,7 +83,8 @@ p.subtitle {
     cursor: pointer;
 }
 
-.fn-shop:hover, .form-btn:hover {
+.fn-shop:hover, .form-btn:hover,
+#sortDropdown.show {
     background-color: #ffffff !important;
     color: #333533;
     border: 1px solid #333533;
@@ -120,15 +123,16 @@ p.subtitle {
 
 .dropdown-item:hover {
     background-color:#f9f3ec;
-    color:#ec4e20
+    color:#ec4e20;
+    font-size: 18px;
 }
 
 .dropdown-heading {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
 }
+
 
 /* Products */
 .product-image {
@@ -145,7 +149,7 @@ p.subtitle {
     font: 12px 'Montserrat', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
-    box-shadow: 0 4px 6px #333533;
+    box-shadow: 0 2px 4px #333533;
 }
 
 .delivery-box {
