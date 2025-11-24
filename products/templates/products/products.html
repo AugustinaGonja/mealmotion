@@ -5,7 +5,7 @@
 
 <div class="container my-5">
     <div class="mb-4 text-center">
-        <h1>All Products</h1>
+        <h1>Products</h1>
         <p>
             <small>{{ total_products }} Products</small>
         </p>
@@ -30,9 +30,11 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
             <li class="text-center dropdown-heading">Sort</li><hr>
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc"><strong>Price:</strong>Low-High</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc"><strong>Price:</strong>High-Low</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc"><strong>Alphabetically:</strong>A-Z</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc"><strong>Category</strong></a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc"><strong>Rating</strong></a></li>
         </ul>
     </div>
 </div>
