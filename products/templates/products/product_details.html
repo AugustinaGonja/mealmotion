@@ -31,21 +31,26 @@
             <h3 class="fw-bold mb-4">£ {{ product.price }}</h3>
 
             <!-- QTY Selector -->
-            <div class="mb-3">
-                <label class="form-label"><strong>QTY</strong></label>
-                <input type="number" class="form-control form-control-lg text-center" value="1" min="1"
-                    style="max-width: 180px;">
-            </div>
-
-            <button class="btn btn-primary btn-lg w-100 rounded-1 fn-shop mb-4">Add to Bag
-                <i class="fa-solid fa-bag-shopping fa-lg text-center mx-2"></i>
-            </button>
+            <form method="POST" action="{% url 'add_items' product.id %}">
+                {% csrf_token %}
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <div class="mb-3">
+                    <label class="form-label"><strong>QTY</strong></label>
+                    <input type="number" name="quantity" class="form-control form-control-lg text-center" value="1"
+                        min="1" max="99" style="max-width: 180px;">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100 rounded-1 fn-shop mb-4">
+                    Add to Bag
+                    <i class="fa-solid fa-bag-shopping fa-lg text-center mx-2"></i>
+                </button>
+            </form>
 
             <!-- Delivery Info -->
             <div class="delivery-box">
                 <div class="delivery-item">
                     <i class="fa-solid fa-truck-fast fa-xl"></i>
-                    <span><strong>Free Delivery</strong> on orders over <strong>£30.</strong></span>
+                    <span><strong>Free Delivery</strong> on orders over
+                        <strong>£{{free_delivery_threshold}}</strong></span>
                 </div>
                 <div class="delivery-item mb-0">
                     <i class="fa-solid fa-box-open fa-xl"></i>
