@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="py-5">
+  <div class="container">
+    <div class="row gy-5">
+        <h1 class="text-start">Your Shopping Bag</h1>
+      <div class="col-md-7">
+        <!--Bag Items-->
+        {% if bag_items %}
+        <strong>Total Items |</strong>
+      </div>
+      <!--Order Summary-->
+      <div class="col-md-5">
+        <h4 class="text-uppercase text-center mb-3"><strong>Summary</strong></h4><hr>
+            <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal</span>
+                <span><strong>Subtotal</strong></span>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+                <span>Shipping</span>
+                <span><strong>Shipping</strong></span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-4 fs-5">
+                <span>Total</span>
+                <span><strong>Total</strong></span>
+            </div>
+        <a href="#" class="btn btn-primary btn-lg rounded-1 w-100 mb-4 fn-shop">Go To Checkout
+            <i class="fa-solid fa-chevron-right fa-sm"></i>
+        </a>
+      </div>
+        {% else %}
+          <p>Your bag is empty.</p>
+          <a href="{% url 'products' %}" class="btn btn-primary btn-lg rounded-1 fn-shop">
+            <i class="fa-solid fa-chevron-left fa-sm mx-2"></i>
+            Keep Shopping
+          </a>
+        {% endif %}
+    </div>
+  </div>
+</main>
+{% endblock %}
