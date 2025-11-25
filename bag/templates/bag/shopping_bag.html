@@ -5,39 +5,65 @@
 <main class="py-5">
   <div class="container">
     <div class="row gy-5">
-        <h1 class="text-start">Your Shopping Bag</h1>
+      <div class="text-center">
+        <h3 class="text-center">Your Shopping Bag</h3>
+        <p class="m-2">Total Items</p>
+      </div>
       <div class="col-md-7">
         <!--Bag Items-->
         {% if bag_items %}
-        <strong>Total Items |</strong>
+        {% for item in bag_items %}
+        <div class="row align-items-center mb-3 border-bottom pb-3 m-0">
+
+          <!-- Product Image -->
+          <div class="col-3 col-md-2">
+            <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
+          </div>
+
+          <!-- Product Info -->
+          <div class="col-9 col-md-10">
+            <h6 class="mb-1 text-uppercase">{{ item.product.name }}</h6>
+            <div class="d-flex align-items-center justify-content-between mt-2">
+              <span class="fw-bold">£{{ item.product.price|floatformat:2 }}</span>
+              <!-- Quantity Selector -->
+              <form action="#" method="POST" class="d-flex align-items-center text-center">
+                {% csrf_token %}
+                <input type="number" name="quantity" value="{{ item.quantity }}" min="1"
+                  class="form-control form-control-sm me-2" style="width: 70px; height: 45px;">
+                <button type="submit" class="btn btn-sm fn-shop">Update</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>Your bag is empty.</p>
+        {% endif %}
       </div>
       <!--Order Summary-->
-      <div class="col-md-5">
-        <h4 class="text-uppercase text-center mb-3"><strong>Summary</strong></h4><hr>
-            <div class="d-flex justify-content-between mb-2">
-                <span>Subtotal</span>
-                <span><strong>Subtotal</strong></span>
-            </div>
-            <div class="d-flex justify-content-between mb-4">
-                <span>Shipping</span>
-                <span><strong>Shipping</strong></span>
-            </div>
-            <hr>
-            <div class="d-flex justify-content-between mb-4 fs-5">
-                <span>Total</span>
-                <span><strong>Total</strong></span>
-            </div>
-        <a href="#" class="btn btn-primary btn-lg rounded-1 w-100 mb-4 fn-shop">Go To Checkout
-            <i class="fa-solid fa-chevron-right fa-sm"></i>
-        </a>
-      </div>
-        {% else %}
-          <p>Your bag is empty.</p>
-          <a href="{% url 'products' %}" class="btn btn-primary btn-lg rounded-1 fn-shop">
-            <i class="fa-solid fa-chevron-left fa-sm mx-2"></i>
-            Keep Shopping
+      <div class="col-lg-5">
+        <div>
+          <h4 class="text-uppercase text-center mb-3"><strong>Summary</strong></h4>
+          <hr>
+          <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal</span>
+            <span><strong>£{{ subtotal|floatformat:2 }}</strong></span>
+          </div>
+          <div class="d-flex justify-content-between mb-3">
+            <span>Shipping</span>
+            <span><strong>£{{ shipping|floatformat:2 }}</strong></span>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between mb-4">
+            <h5><strong>Total</strong></h5>
+            <h5><strong>£{{ total|floatformat:2 }}</strong></h5>
+          </div>
+          <a href="#" class="btn btn-primary btn-lg w-100 rounded-1 fn-shop">
+            Go To Checkout
+            <i class="fa-solid fa-chevron-right fa-sm ms-2"></i>
           </a>
-        {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </main>
