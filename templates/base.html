@@ -20,7 +20,7 @@
   <!-- Navigation -->
   {% include 'includes/navbar.html' %}
   <div id="nav-banner" class="container-fluid text-center shadow-sm">
-    <strong class="text-uppercase">Free Delivery On Orders Over £30!</strong>
+    <strong class="text-uppercase">Free Delivery On Orders Over £{{free_delivery_threshold}}!</strong>
   </div>
   <!-- Main Content -->
   {% block content %}
