@@ -72,15 +72,16 @@
           </div>
         </form>
 
-        <div class="d-flex align-items-start gap-3">
+
           <a href="" class="text-reset">
             <i class="fa-solid fa-user fa-lg"></i>
           </a>
-          <div class="d-inline-flex flex-column align-items-center">
+
+          <div class="d-flex flex-column align-items-center justify-content-center h-100">
             <a href="{% url 'bag' %}" class="text-reset text-decoration-none">
               <i class="fa-solid fa-bag-shopping fa-lg"></i>
             </a>
-            <small class="mt-1">
+            <small class="position-absolute bottom-0 end-0">
               {% if grand_total %}
                 £{{ grand_total|floatformat:2 }}
               {% else %}
@@ -88,7 +89,7 @@
               {% endif %}
             </small>
           </div>
-      </div>
+   
     </div>
   </div>
 </nav>

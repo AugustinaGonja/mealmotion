@@ -5,9 +5,11 @@
 <main class="py-5">
   <div class="container">
     <div class="row gy-5">
-      <div class="text-center">
+      <div class="text-center text-uppercase">
         <h3 class="text-center">Your Shopping Bag</h3>
-        <p class="m-2">Total Items</p>
+      {% if product_count %}
+        <p class="m-2">Total Items | {{ product_count }}</p>
+      {% endif %}
       </div>
       <div class="col-md-7">
         <!--Bag Items-->
@@ -36,6 +38,15 @@
           </div>
         </div>
         {% endfor %}
+        {% if delivery_delta > 0 %}
+          <p class="text-danger">
+              Spend £{{ delivery_delta|floatformat:2 }} more to get free delivery.
+          </p>
+        {% else %}
+          <p class="text-success">
+              You've unlocked FREE delivery!
+          </p>
+        {% endif %}
         {% else %}
         <p>Your bag is empty.</p>
         {% endif %}
@@ -43,20 +54,20 @@
       <!--Order Summary-->
       <div class="col-lg-5">
         <div>
-          <h4 class="text-uppercase text-center mb-3"><strong>Summary</strong></h4>
+          <h3 class="text-uppercase text-center mb-3 fs-4">Order Summary</h3>
           <hr>
           <div class="d-flex justify-content-between mb-2">
             <span>Subtotal</span>
-            <span><strong>£{{ subtotal|floatformat:2 }}</strong></span>
+            <span><strong>£{{ total|floatformat:2 }}</strong></span>
           </div>
           <div class="d-flex justify-content-between mb-3">
             <span>Shipping</span>
-            <span><strong>£{{ shipping|floatformat:2 }}</strong></span>
+            <span><strong>£{{ delivery|floatformat:2 }}</strong></span>
           </div>
           <hr>
           <div class="d-flex justify-content-between mb-4">
             <h5><strong>Total</strong></h5>
-            <h5><strong>£{{ total|floatformat:2 }}</strong></h5>
+            <h5><strong>£{{ grand_total|floatformat:2 }}</strong></h5>
           </div>
           <a href="#" class="btn btn-primary btn-lg w-100 rounded-1 fn-shop">
             Go To Checkout
