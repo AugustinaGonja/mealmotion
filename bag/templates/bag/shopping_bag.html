@@ -2,20 +2,21 @@
 {% load static %}
 
 {% block content %}
-<main class="py-5">
+<main class="py-4">
   <div class="container">
-    <div class="row gy-5">
-      <div class="text-center text-uppercase">
-        <h3 class="text-center">Your Shopping Bag</h3>
-      {% if product_count %}
-        <p class="m-2">Total Items | {{ product_count }}</p>
-      {% endif %}
+    <div class="row gy-1">
+      <div class="text-start">
+        <h3 class="text-uppercase">Your Bag{% if product_count %}<small>({{ product_count }})</small>{% endif %}</h3>
+        {% if total %}
+          p>Order Total | <strong>£{{ total|floatformat:2 }}</strong></p>
+        {% endif %}
       </div>
       <div class="col-md-7">
+        <p class="fw-bold fs-6">Product Info</p>
         <!--Bag Items-->
         {% if bag_items %}
         {% for item in bag_items %}
-        <div class="row align-items-center mb-3 border-bottom pb-3 m-0">
+        <div class="row mb-3 border-bottom pb-3 m-0">
 
           <!-- Product Image -->
           <div class="col-3 col-md-2">
@@ -23,29 +24,50 @@
           </div>
 
           <!-- Product Info -->
-          <div class="col-9 col-md-10">
-            <h6 class="mb-1 text-uppercase">{{ item.product.name }}</h6>
-            <div class="d-flex align-items-center justify-content-between mt-2">
-              <span class="fw-bold">£{{ item.product.price|floatformat:2 }}</span>
+          <div class="col-8 col-md-8">
+            <h6 class="text-uppercase">{{ item.product.name }}</h6>
+            <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
+            <div class="d-flex align-items-center justify-content-between">
               <!-- Quantity Selector -->
-              <form action="#" method="POST" class="d-flex align-items-center text-center">
+              <form action="#" method="POST" class="d-flex align-items-center text-center mt-2">
                 {% csrf_token %}
-                <input type="number" name="quantity" value="{{ item.quantity }}" min="1"
-                  class="form-control form-control-sm me-2" style="width: 70px; height: 45px;">
-                <button type="submit" class="btn btn-sm fn-shop">Update</button>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <div>
+                  <div class="input-group">
+                    <!--Decrease Qty Button-->
+                    <div class="input-group-prepend">
+                      <button type="button" class="btn btn-sm fn-shop" id="decrement-qty_{{ item.item_id }}"
+                        data-item-id="{{ item.item_id }}">
+                        <i class="fa-solid fa-minus fa-sm"></i>
+                      </button>
+                    </div>
+                    <input type="number" id="id_qty_{{ item.item_id  }}" name="quantity" value="{{item.quantity}}"
+                      min="1" max="99" class="form-control text-center" data-item-id="{{ item.item_id }}">
+                    <!--Increase Qty Button-->
+                    <div class="input-group-append">
+                      <button type="button" class="btn btn-sm fn-shop" id="increment-qty_{{ item.item_id }}"
+                        data-item-id="{{ item.item_id  }}">
+                        <i class="fa-solid fa-plus fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </form>
             </div>
+          </div>
+          <div class="col-1 col-md-2">
+            <i class="fa-solid fa-trash-can" style="color: #a31621;"></i>
           </div>
         </div>
         {% endfor %}
         {% if delivery_delta > 0 %}
-          <p class="text-danger">
-              Spend £{{ delivery_delta|floatformat:2 }} more to get free delivery.
-          </p>
+        <p class="text-danger">
+          Spend £{{ delivery_delta|floatformat:2 }} more to get free delivery.
+        </p>
         {% else %}
-          <p class="text-success">
-              You've unlocked FREE delivery!
-          </p>
+        <p class="text-success">
+          You've unlocked FREE delivery!
+        </p>
         {% endif %}
         {% else %}
         <p>Your bag is empty.</p>
@@ -70,7 +92,7 @@
             <h5><strong>£{{ grand_total|floatformat:2 }}</strong></h5>
           </div>
           <a href="#" class="btn btn-primary btn-lg w-100 rounded-1 fn-shop">
-            Go To Checkout
+            Secure Checkout
             <i class="fa-solid fa-chevron-right fa-sm ms-2"></i>
           </a>
         </div>
