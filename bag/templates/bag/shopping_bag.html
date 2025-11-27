@@ -6,13 +6,14 @@
   <div class="container">
     <div class="row gy-1">
       <div class="text-start">
-        <h3 class="text-uppercase">Your Bag{% if product_count %}<small>({{ product_count }})</small>{% endif %}</h3>
-        {% if total %}
-          <p>Order Total | <strong>£{{ total|floatformat:2 }}</strong></p>
+        <h3 class="text-uppercase">Your Bag<small>
+            {% if product_count %}({{ product_count }})</small>
+        </h3>
+        <p>Order Total | <strong>£{{ total|floatformat:2 }}</strong></p>
+        <p class="fw-bold fs-6">Product Info</p>
         {% endif %}
       </div>
       <div class="col-md-7">
-        <p class="fw-bold fs-6">Product Info</p>
         <!--Bag Items-->
         {% if bag_items %}
         {% for item in bag_items %}
@@ -29,7 +30,7 @@
             <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
             <div class="d-flex align-items-center justify-content-between">
               <!-- Quantity Selector -->
-              <form action="#" method="POST" class="d-flex align-items-center text-center mt-2">
+              <form action="#" method="POST" class="d-flex align-items-center text-center mt-2 update-qty">
                 {% csrf_token %}
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <div>
@@ -55,7 +56,8 @@
               </form>
             </div>
           </div>
-          <div class="col-1 col-md-2">
+          <!--Remove Item-->
+          <div class="col-1 col-md-2 remove-item">
             <i class="fa-solid fa-trash-can" style="color: #a31621;"></i>
           </div>
         </div>
@@ -83,7 +85,7 @@
             <span><strong>£{{ total|floatformat:2 }}</strong></span>
           </div>
           <div class="d-flex justify-content-between mb-3">
-            <span>Shipping</span>
+            <span>Delivery</span>
             <span><strong>£{{ delivery|floatformat:2 }}</strong></span>
           </div>
           <hr>
@@ -100,4 +102,10 @@
     </div>
   </div>
 </main>
+{% endblock %}
+
+{% block extra_js %}
+{% include 'products/includes/qty_selector_script.html' %}
+<script>
+</script>
 {% endblock %}

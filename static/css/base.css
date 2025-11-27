@@ -71,6 +71,9 @@ p.subtitle {
     background-color: transparent !important;
 }
 
+.bag-price {
+    font-size: 12px;
+}
 
 /* Buttons */
 .fn-shop, .form-btn {
@@ -191,6 +194,9 @@ p.subtitle {
         padding: 1rem;
         z-index: 1050;
         box-shadow: 0 4px 4px #333533;
+    }
+    .navbar-brand {
+    font-size: 28px;
     }
     .dropdown-nav-mobile {
     border: none;

@@ -1,95 +1,95 @@
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow-sm custom-nav">
   <div class="container-fluid">
-    <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
-      <i class="fa-solid fa-utensils fa-sm m-3"></i>
-      MEALMOTION
-    </a>
+    <div class="d-flex align-items-center w-100">
+      <div class="d-flex align-items-center order-1">
+        <!-- Toggler for mobile -->
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Toggler for mobile -->
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+          <i class="fa-solid fa-utensils fa-sm m-3"></i>
+          MEALMOTION
+        </a>
+      </div>
 
-    <!-- Collapsible Content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto gap-2 gap-lg-3 text-center align-items-center">
-        <!--Home Link-->
-        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-        <!-- Dropdown 1 -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{% url 'products' %}" id="shopDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Fitness & Nutrition Shop
-          </a>
-          <ul class="dropdown-menu dropdown-nav-mobile" aria-labelledby="shopDropdown">
-            <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplements</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
-          </ul>
-        </li>
+      <!-- Collapsible Content -->
+      <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-center" id="mainNav">
+        <ul class="navbar-nav mx-auto gap-2 gap-lg-3 text-center align-items-center">
+          <!--Home Link-->
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <!-- Dropdown 1 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'products' %}" id="shopDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Fitness & Nutrition Shop</a>
+            <ul class="dropdown-menu dropdown-nav-mobile" aria-labelledby="shopDropdown">
+              <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplements</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a>
+              </li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
+            </ul>
+          </li>
 
-        <!-- Dropdown 2 -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="recipeDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Recipe Catalogue
-          </a>
-          <ul class="dropdown-menu dropdown-nav-mobile" aria-labelledby="recipeDropdown">
-            <li><a class="dropdown-item" href="#">All Recipes</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Category 1</a></li>
-            <li><a class="dropdown-item" href="#">Category 2</a></li>
-            <li><a class="dropdown-item" href="#">Category 3</a></li>
-          </ul>
-        </li>
+          <!-- Dropdown 2 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="recipeDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Recipe Catalogue</a>
+            <ul class="dropdown-menu dropdown-nav-mobile" aria-labelledby="recipeDropdown">
+              <li><a class="dropdown-item" href="#">All Recipes</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Category 1</a></li>
+              <li><a class="dropdown-item" href="#">Category 2</a></li>
+              <li><a class="dropdown-item" href="#">Category 3</a></li>
+            </ul>
+          </li>
 
-        <!-- Regular Links -->
-        <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-        <li class="nav-item"><a class="nav-link  d-flex align-items-center" href="#">
-            Quiz<i class="fa-solid fa-caret-right fa-sm ps-1"></i>
-          </a></li>
-      </ul>
+          <!-- Regular Links -->
+          <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+          <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#">
+              Quiz<i class="fa-solid fa-caret-right fa-sm ps-1"></i>
+            </a></li>
+        </ul>
+      </div>
 
       <!-- Nav Icons -->
-      <div class="d-none d-lg-flex ms-auto align-items-center gap-3">
-        <form method="GET" action="{% url 'products' %}" class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-end gap-2">
+      <div class="d-flex ms-auto align-items-center gap-3 order-2 order-lg-3 ms-auto toggle-search">
+        <form method="GET" action="{% url 'products' %}" class="d-none d-sm-flex align-items-center">
           <div class="input-group input-group-sm">
             <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
-            <button class="btn btn-outline-success text-uppercase form-btn" type="submit">
+            <button class="btn text-uppercase form-btn" type="submit">
               <i class="fa-solid fa-magnifying-glass fa-lg"></i>
             </button>
           </div>
         </form>
 
 
-          <a href="" class="text-reset">
-            <i class="fa-solid fa-user fa-lg"></i>
-          </a>
+        <a href="" class="text-reset">
+          <i class="fa-solid fa-user fa-lg"></i>
+        </a>
 
-          <div class="d-flex flex-column align-items-center justify-content-center h-100">
-            <a href="{% url 'bag' %}" class="text-reset text-decoration-none">
-              <i class="fa-solid fa-bag-shopping fa-lg"></i>
-            </a>
-            <small class="position-absolute bottom-0 end-0">
-              {% if grand_total %}
-                £{{ grand_total|floatformat:2 }}
-              {% else %}
-                £0.00
-              {% endif %}
-            </small>
-          </div>
-   
+        <div class="position-relative">
+          <a href="{% url 'bag' %}" class="text-reset text-decoration-none">
+            <i class="fa-solid fa-bag-shopping fa-lg"></i>
+          </a>
+          <p class="position-absolute top-50 start-50 translate-middle mt-3 bag-price">
+            {% if grand_total %}
+            £{{ grand_total|floatformat:2 }}
+            {% else %}
+            £0.00
+            {% endif %}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
