@@ -62,8 +62,8 @@
       </div>
 
       <!-- Nav Icons -->
-      <div class="d-flex ms-auto align-items-center gap-3 order-2 order-lg-3 ms-auto toggle-search">
-        <form method="GET" action="{% url 'products' %}" class="d-none d-sm-flex align-items-center">
+      <div class="d-flex align-items-center gap-3 order-2 order-lg-3 ms-auto">
+        <form method="GET" action="{% url 'products' %}" class="togglesearch" style="display: none;">
           <div class="input-group input-group-sm">
             <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
             <button class="btn text-uppercase form-btn" type="submit">
@@ -72,8 +72,11 @@
           </div>
         </form>
 
+        <a href="" class="text-reset search-trigger">
+          <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+        </a>
 
-        <a href="" class="text-reset">
+        <a href="" class="text-reset search-trigger">
           <i class="fa-solid fa-user fa-lg"></i>
         </a>
 
@@ -93,3 +96,28 @@
     </div>
   </div>
 </nav>
+
+{% block extra_js %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const trigger = document.querySelector(".search-trigger");
+  const searchForm = document.querySelector(".togglesearch");
+  const inputField = searchForm.querySelector("input[type='search']");
+
+  trigger.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    if (searchForm.style.display === "none" || searchForm.style.display === "") {
+      // Show search form, hide icon
+      searchForm.style.display = "flex";
+      trigger.style.display = "none";
+      inputField.focus();
+    } else {
+      // Hide search form, show icon
+      searchForm.style.display = "none";
+      trigger.style.display = "inline-flex";
+    }
+  });
+});
+</script>
+{% endblock %}
