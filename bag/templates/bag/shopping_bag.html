@@ -56,15 +56,22 @@
               </form>
             </div>
           </div>
+
           <!--Remove Item-->
           <div class="col-1 col-md-2 remove-item">
-            <i class="fa-solid fa-trash-can" style="color: #a31621;"></i>
+            <form action="{% url 'remove_item' item.item_id %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" style="border: none; background:none ;">
+                <i class="fa-solid fa-trash-can" style="color: #a31621;"></i>
+              </button>
+            </form>
           </div>
+
         </div>
         {% endfor %}
-        {% if delivery_delta > 0 %}
+        {% if free_delivery_delta > 0 %}
         <p class="text-danger">
-          Spend £{{ delivery_delta|floatformat:2 }} more to get free delivery.
+          Spend £{{ free_delivery_delta|floatformat:2 }} more to get free delivery.
         </p>
         {% else %}
         <p class="text-success">

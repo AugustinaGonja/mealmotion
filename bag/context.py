@@ -25,15 +25,15 @@ def bag_contents(request):
         
     if bag_items:
         if total < settings.FREE_DELIVERY_THRESHOLD:
-            delivery = settings.STANDARD_DELIVERY
-            free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+            delivery = Decimal(str(settings.STANDARD_DELIVERY))
+            free_delivery_delta = Decimal(str(settings.FREE_DELIVERY_THRESHOLD)) - total
         else:
-            delivery = 0
-            free_delivery_delta = 0
+            delivery = Decimal('0.00')
+            free_delivery_delta = Decimal('0.00')
         
     else :
-        delivery = 0
-        free_delivery_delta = 0
+        delivery = Decimal('0.00')
+        free_delivery_delta = Decimal('0.00')
         
     grand_total = delivery + total
 
