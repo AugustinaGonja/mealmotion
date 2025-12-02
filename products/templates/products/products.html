@@ -73,7 +73,7 @@
     <div class="row">
         {% for product in products %}
         <div class="col-md-3 mb-4">
-            <!--Container conents wrapped in link to product details-->
+            <!--Container contents wrapped in link to product details-->
             <a href="{% url 'product_details' product.id %}" class="text-dark text-decoration-none d-block">
                 <div class="category-badge"><i class="fa-solid fa-tags"></i>
                     {{ product.category.friendly_name }}
@@ -99,6 +99,7 @@
     </div>
 </div>
 <!--Back to Top Button-->
+{% if products %}
 <div class="d-flex justify-content-center">
     <button type="button" class="btn rounded-1 fn-shop text-uppercase text-center mb-5" id="btt-btn"
         onclick="topFunction()">
@@ -106,7 +107,7 @@
         Back to Top
     </button>
 </div>
-
+{% endif %}
 <script>
     let bttButton = document.getElementById("btt-btn");
 

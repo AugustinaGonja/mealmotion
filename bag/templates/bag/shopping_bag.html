@@ -30,7 +30,7 @@
             <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
             <div class="d-flex align-items-center justify-content-between">
               <!-- Quantity Selector -->
-              <form action="#" method="POST" class="d-flex align-items-center text-center mt-2 update-qty">
+              <form action="{% url 'update_bag' item.item_id %}" method="POST" class="d-flex align-items-center text-center mt-2 update-qty">
                 {% csrf_token %}
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <div>

@@ -184,8 +184,8 @@ p.subtitle {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {  
-    .navbar .navbar-collapse {
+@media (max-width: 992px) {
+    .navbar .navbar-collapse { 
         position: fixed;
         top: 64px;
         left: 0;
@@ -195,14 +195,22 @@ p.subtitle {
         z-index: 1050;
         box-shadow: 0 4px 4px #333533;
     }
+}
+
+@media (max-width: 768px) {  
     .navbar-brand {
     font-size: 28px;
     }
     .dropdown-nav-mobile {
     border: none;
     box-shadow: none;
+    }
+
+    .dropdown-item:hover {
+        background-color: #e9e3dc;
+    }
 }
-}
+
 
 @media (max-width: 600px) {
     .fn-shop, .form-btn {
