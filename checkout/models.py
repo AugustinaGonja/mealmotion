@@ -13,12 +13,13 @@ class Order(models.Model):
     email = models.EmailField(max_length=255, null=False, blank=False )
     contact_number = models.CharField(max_length=20, null=False, blank=False)
 
-    country = models.CharField(max_length=40)
-    town_or_city = models.CharField(max_length=40)
     address_line_1 = models.CharField(max_length=80)
     address_line_2 = models.CharField(max_length=255, blank=True, null=True)
+    town_or_city = models.CharField(max_length=40)
     post_code = models.CharField(max_length=20, null=False, blank=False)
-
+    county = models.CharField(max_length=40)
+    country = models.CharField(max_length=40)
+    
     delivery_cost = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=False)
     subtotal = models.DecimalField(max_digits=10, decimal_places=2, null=False)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False)
