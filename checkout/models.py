@@ -27,13 +27,13 @@ class Order(models.Model):
 
     def _generate_order_number(self):
         """ Generate a random order number using UUID """
-        return uuid.uuid4.hex.upper()
+        return uuid.uuid4().hex.upper()
     
     def update_total(self):
         """ Update grand total & delivery costs each time an item is added  """
-        self.subtotal = self.lineitems.aggregate(sum('lineitem_total'))['lineitem_total_sum']
+        self.subtotal = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total_sum']
         if self.subtotal < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.subtotal + self.delivery_cost
+            self.delivery_cost = settings.STANDARD_DELIVERY
         else:
             self.delivery_cost = 0 
         self.grand_total = self.subtotal + self.delivery_cost
