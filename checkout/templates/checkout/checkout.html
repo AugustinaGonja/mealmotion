@@ -29,31 +29,6 @@
             <h6 class="text-uppercase">{{ item.product.name }}</h6>
             <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
             <div class="d-flex align-items-center justify-content-between">
-              <!-- Quantity Selector -->
-              <form action="{% url 'update_bag' item.item_id %}" method="POST" class="d-flex align-items-center text-center mt-2 update-qty">
-                {% csrf_token %}
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <div>
-                  <div class="input-group">
-                    <!--Decrease Qty Button-->
-                    <div class="input-group-prepend">
-                      <button type="button" class="btn btn-sm fn-shop" id="decrement-qty_{{ item.item_id }}"
-                        data-item-id="{{ item.item_id }}">
-                        <i class="fa-solid fa-minus fa-sm"></i>
-                      </button>
-                    </div>
-                    <input type="number" id="id_qty_{{ item.item_id  }}" name="quantity" value="{{item.quantity}}"
-                      min="1" max="99" class="form-control text-center" data-item-id="{{ item.item_id }}">
-                    <!--Increase Qty Button-->
-                    <div class="input-group-append">
-                      <button type="button" class="btn btn-sm fn-shop" id="increment-qty_{{ item.item_id }}"
-                        data-item-id="{{ item.item_id  }}">
-                        <i class="fa-solid fa-plus fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
 
@@ -97,7 +72,7 @@
             <h5><strong>Total</strong></h5>
             <h5><strong>£{{ grand_total|floatformat:2 }}</strong></h5>
           </div>
-          <a href="{% url 'checkout' %}" class="btn btn-primary btn-lg w-100 rounded-1 fn-shop">
+          <a href="#" class="btn btn-primary btn-lg w-100 rounded-1 fn-shop">
             Secure Checkout
             <i class="fa-solid fa-chevron-right fa-sm ms-2"></i>
           </a>
@@ -113,35 +88,4 @@
         </a>
       {% endif %}
 </main>
-{% endblock %}
-
-{% block extra_js %}
-{% include 'products/includes/qty_selector_script.html' %}
-<script>
-document.querySelectorAll('.fn-shop').forEach(btn => {
-    btn.addEventListener('click', e => {
-        const button = e.target.closest('button');
-        const itemId = button.dataset.itemId;
-        const input = document.querySelector(`#id_qty_${itemId}`);
-        let current = parseInt(input.value);
-
-        // Increment or decrement
-        if (button.id.startsWith('increment')) {
-            current += 1;
-        } else if (button.id.startsWith('decrement')) {
-            current -= 1;
-        }
-
-        // Keep quantity within limits
-        if (current < 1) current = 1;
-        if (current > 99) current = 99;
-
-        input.value = current;
-
-        // Auto-submit the form
-        input.form.submit();
-    });
-});
-</script>
-
 {% endblock %}
