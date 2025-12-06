@@ -45,8 +45,13 @@
         </li>
 
         <!-- Regular Links -->
-        <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link" href="#">My Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+        {% else %}        
+        <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+        {% endif %}
         <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#">
             Quiz<i class="fa-solid fa-caret-right fa-sm ps-1"></i></a></li>
       </ul>
@@ -67,7 +72,7 @@
         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
       </a>
 
-      <a href="" class="text-reset">
+      <a href="{% url 'account_login' %}" class="text-reset">
         <i class="fa-solid fa-user fa-lg"></i>
       </a>
 
