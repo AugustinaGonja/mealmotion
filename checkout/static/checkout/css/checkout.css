@@ -4,6 +4,10 @@
     border-radius: 4px;
     background-color: #e9e3dc;
 }
+#card-element{
+    background-color:#ffff;
+    border-radius: 4px;
+}
 
 .form-group {
     margin-bottom: 15px;

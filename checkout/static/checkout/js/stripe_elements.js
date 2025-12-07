@@ -20,8 +20,8 @@ const style = {
       },
     },
     invalid: {
-      iconColor: '#FFC7EE',
-      color: '#FFC7EE',
+      iconColor: '#dc3545',
+      color: '#dc3545',
     },
 };
 
@@ -29,3 +29,34 @@ const style = {
 
 const card = elements.create('card', {style});
 card.mount('#card-element');
+
+
+
+// Form Submission
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); 
+
+    stripe.confirmCardPayment(client_secret, {
+        payment_method: {
+            card: card,
+            billing_details: {
+                name: form.full_name?.value || "",
+                email: form.email?.value || "",
+            }
+        }
+    }).then(function (result) {
+
+    // Handle Realtime Validation Errors
+
+      const errorDiv = document.getElementById('card-errors');
+
+      if (result.error) {
+          errorDiv.innerHTML = `<span class="small me-2">${result.error.message}</span>`;
+      } else {
+          if (result.paymentIntent.status === 'succeeded') {
+              form.submit();
+          }
+        }
+    });
+});
