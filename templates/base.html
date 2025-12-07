@@ -12,6 +12,8 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <!-- Custom Styles -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% block extra_css %}
+  {% endblock %}
   <!-- Stripe JS -->
   <script src="https://js.stripe.com/v3/"></script>
   <!-- FontAwesome -->

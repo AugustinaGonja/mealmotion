@@ -211,7 +211,6 @@ p.subtitle {
     }
 }
 
-
 @media (max-width: 600px) {
     .fn-shop, .form-btn {
         width: 100%;
