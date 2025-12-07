@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="py-4">
+    <div class="container">
+        <div class="row gy-1">
+            <div>
+                <h3 class="text-uppercase text-start mt-4">Thank you !</h3>
+                <p>Your order is being processed and you will recieve a confirmation message at <strong>{{order.email}}.</strong></p>
+            </div>
+            <div class="col-md-8">
+            <!--Order Summary -->
+            {% if order %}
+            <div class="card p-3 mt-3">
+                <h5 class="text-uppercase">Order Summary</h5>
+                <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+                <p><strong>Total:</strong> £ {{ order.grand_total }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <!--Return To Home-->
+    <div class="mt-4">
+        <a href="{% url 'home' %}" class="btn rounded-1 fn-shop mb-2">
+            <i class="fa-solid fa-chevron-left me-2 "></i>Back to Home</a>
+    </div>
+
+</main>
+{% endblock %}
+
+{% block extra_js %}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}

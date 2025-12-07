@@ -36,10 +36,12 @@ def checkout(request):
         if order_form.is_valid():
             order = order_form.save()
 
-            bag = request.session.get('bag', {})
+            bag = bag_contents(request)['bag_items']
 
-            for item_id, quantity in bag_contents():
-                product = Product.objects.get(id=item_id)
+            for item in bag:
+                product = Product.objects.get(id=item['item_id'])
+                quantity = item['quantity']
+
 
                 OrderLineItem.objects.create(
                     order=order,
