@@ -6,26 +6,57 @@
 {% endblock %}
 
 {% block content %}
-<main class="py-4">
-    <div class="container">
+<main class="py-4 success-wrapper">
+    <div class="container success-box">
         <div class="row gy-1">
-            <div>
-                <h3 class="text-uppercase text-start mt-4">Thank you !</h3>
-                <p>Your order is being processed and you will recieve a confirmation message at <strong>{{order.email}}.</strong></p>
+            <div class="text-center">
+                <i class="fa-solid fa-circle-check check-icon text-success "></i>
+                <h3 class="text-uppercase mt-2">Thank you for your purchase !</h3>
+                <p class="text-muted">Your order is being processed and you will recieve a confirmation message at <strong>{{order.email}}.</strong>
+                    <br>Your order number is <strong>{{ order.order_number }}</strong>
+                </p>
             </div>
-            <div class="col-md-8">
+            <div class="card-wrapper">
             <!--Order Summary -->
-            {% if order %}
-            <div class="card p-3 mt-3">
-                <h5 class="text-uppercase">Order Summary</h5>
-                <p><strong>Order Number:</strong> {{ order.order_number }}</p>
-                <p><strong>Total:</strong> £ {{ order.grand_total }}</p>
+            <div class="card p-4 shadow-sm rounded-2">
+                <h4 class="text-uppercase text-center fw-bold mb-3">Order Summary</h4>
+                <!--Order Info-->
+                <div class="mb-3">
+                    <p class="mb-1"><strong>Order Number:</strong> {{ order.order_number }}</p>
+                    <p class="mb-1"><strong>Order Date:</strong> {{ order.date}}</p>
+                </div>
+                <hr class="m-0">
+                <h6 class="fw-semibold mt-3 mb-2">Order Details</h6>
+                {% for item in order.lineitems.all %}
+                <div class="row"> 
+                    <div class="col"> 
+                        <p>{{item.product.name}}</p>
+                    </div>
+                    <div class="col text-end text-muted">
+                        <p>{{item.quantity}} x £{{item.product.price}}</p>
+                    </div>
+                </div>
+                {% endfor %}<hr>
+                <h6 class="fw-semibold">Billing Info</h6>
+                <p><strong>Order Total:</strong> £{{ order.subtotal }}</p>
+                <p><strong>Delivery:</strong> £{{ order.delivery_cost }}</p>
+                <p><strong>Grand Total:</strong> <span class="fw-bold text-success">£{{ order.grand_total }}</span></p>
+                <hr>
+                <!--Address-->
+                <h6 class="fw-semibold">Shipping Address</h6>
+                <p class="mb-0">
+                    {{ order.address_line_1 }}<br>
+                    {% if order.shipping_address.address_line2 %}
+                    {{ order.address_line_2 }}<br>
+                    {% endif %}
+                    {{ order.town_or_city }}, {{ order.county }}, {{ order.post_code }}<br>
+                    {{ order.country }}
+                </p>
             </div>
-            {% endif %}
         </div>
     </div>
     <!--Return To Home-->
-    <div class="mt-4">
+    <div class="text-center mt-3 mb-3">
         <a href="{% url 'home' %}" class="btn rounded-1 fn-shop mb-2">
             <i class="fa-solid fa-chevron-left me-2 "></i>Back to Home</a>
     </div>

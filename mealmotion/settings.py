@@ -16,6 +16,8 @@ import os
 if os.path.isfile('env.py'):
     import env
 
+from decimal import Decimal
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -161,8 +163,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-FREE_DELIVERY_THRESHOLD = 50
-STANDARD_DELIVERY = 3.99
+FREE_DELIVERY_THRESHOLD = Decimal('50')
+STANDARD_DELIVERY = Decimal('3.99')
 
 # Stripe 
 STRIPE_CURRENCY = 'gbp'

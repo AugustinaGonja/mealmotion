@@ -1,6 +1,6 @@
 /* Checkout Styles */
 
-#payment-form {
+#payment-form, .success-box {
     border-radius: 4px;
     background-color: #e9e3dc;
 }
@@ -11,4 +11,27 @@
 
 .form-group {
     margin-bottom: 15px;
+}
+
+/* Checkout Success */
+.success-wrapper{
+    display: flex;                 
+    justify-content: center;       
+    align-items: center;           
+    min-height: 100vh;             
+    padding: 20px;                
+}
+.success-box, .card{
+   max-width: fit-content;
+}
+
+.card-wrapper{
+    display: flex;                 
+    justify-content: center;       
+    align-items: center; 
+}
+
+.check-icon{
+    font-size: 4em;
+    margin-top: 15px;
 }

@@ -46,10 +46,8 @@
                             <label for="save-info" class="form-check-label">Save this information to my profile</label>
                         </div>
                         {% else %}
-                        <p class="text-muted text-center"><a href="{% url 'account_signup' %}"
-                                class="btn srounded-1 fn-shop p-2 m-2">Signup</a> or <a href="{% url 'account_login' %}"
-                                class="btn rounded-1 fn-shop p-2 m-2">Login</a>
-                            <br>To save your details
+                        <p class="text-muted text-center"><a href="{% url 'account_signup' %}">Signup</a> or <a
+                                href="{% url 'account_login' %}">Login</a> to save your details.
                         </p>
                         {% endif %}
                     </div>
