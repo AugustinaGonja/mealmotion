@@ -72,9 +72,15 @@
         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
       </a>
 
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile' %}" class="text-reset">
+        <i class="fa-solid fa-user fa-lg"></i>
+      </a>
+      {% else %}
       <a href="{% url 'account_login' %}" class="text-reset">
         <i class="fa-solid fa-user fa-lg"></i>
       </a>
+      {% endif %}
 
       <div class="position-relative">
         <a href="{% url 'bag' %}" class="text-reset text-decoration-none">
