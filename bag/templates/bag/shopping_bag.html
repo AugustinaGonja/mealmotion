@@ -12,54 +12,47 @@
         </a>
     </div>
     <div class="row gy-1">
-      <div class="text-start">
+      <div class=" col-md-7 text-start">
         <h3 class="text-uppercase">Your Bag<small>
-            {% if product_count %}({{ product_count }})</small>
+            {% if product_count %}({{ product_count }}){% endif %}</small>
         </h3>
         <p>Order Total | <strong>£{{ total|floatformat:2 }}</strong></p>
         <p class="fw-bold fs-6">Product Info</p>
-        {% endif %}
-      </div>
-      <div class="col-md-7">
+
         <!--Bag Items-->
         {% if bag_items %}
-        {% for item in bag_items %}
-        <div class="row mb-3 border-bottom pb-3 m-0">
+          {% for item in bag_items %}
+          <div class="row mb-3 border-bottom pb-3 m-0">
 
-          <!-- Product Image -->
-          <div class="col-3 col-md-2">
-            <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
-          </div>
+            <!-- Product Image -->
+            <div class="col-3 col-md-2">
+              <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
+            </div>
 
-          <!-- Product Info -->
-          <div class="col-8 col-md-8">
-            <h6 class="text-uppercase">{{ item.product.name }}</h6>
-            <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
-            <div class="d-flex align-items-center justify-content-between">
+            <!-- Product Info -->
+            <div class="col-8 col-md-8">
+              <h6 class="text-uppercase">{{ item.product.name }}</h6>
+              <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
+              <div class="d-flex align-items-center justify-content-between">
               <!-- Quantity Selector -->
-              <form action="{% url 'update_bag' item.item_id %}" method="POST" class="d-flex align-items-center text-center mt-2 update-qty">
+                <form action="{% url 'update_bag' item.item_id %}" method="POST" class="d-flex align-items-center text-center mt-2 update-qty">
                 {% csrf_token %}
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <div>
-                  <div class="input-group">
+      
+                <div class="input-group">
                     <!--Decrease Qty Button-->
-                    <div class="input-group-prepend">
                       <button type="button" class="btn btn-sm fn-shop" id="decrement-qty_{{ item.item_id }}"
                         data-item-id="{{ item.item_id }}">
                         <i class="fa-solid fa-minus fa-sm"></i>
                       </button>
-                    </div>
-                    <input type="number" id="id_qty_{{ item.item_id  }}" name="quantity" value="{{item.quantity}}"
+                      <input type="number" id="id_qty_{{ item.item_id  }}" name="quantity" value="{{item.quantity}}"
                       min="1" max="99" class="form-control text-center" data-item-id="{{ item.item_id }}">
                     <!--Increase Qty Button-->
-                    <div class="input-group-append">
                       <button type="button" class="btn btn-sm fn-shop" id="increment-qty_{{ item.item_id }}"
                         data-item-id="{{ item.item_id  }}">
                         <i class="fa-solid fa-plus fa-sm"></i>
                       </button>
-                    </div>
                   </div>
-                </div>
               </form>
             </div>
           </div>
