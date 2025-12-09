@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-start text-uppercase mb-4">{% trans "Sign In" %}</h2>
+
+    <form method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        
+        {{ form|crispy }}
+        {{ redirect_field }}
+
+        <p class="mt-2 text-start">
+            <a href="{% url 'account_reset_password' %}">
+                {% trans "Forgot password?" %}
+            </a>
+        </p> 
+
+        <!-- Submit button -->
+        <button type="submit" class="btn w-100 rounded-1 fn-shop mt-3">
+            {% trans "Sign In" %}
+        </button>
+    </form>
+
+    <!-- Signup-->
+    <p class="mt-3 text-center">
+        {% blocktranslate %}
+            If you have not created an account yet,
+            please <a href="{{ signup_url }}">sign up</a> here.
+        {% endblocktranslate %}
+    </p>
+</div>
+{% endblock %}
