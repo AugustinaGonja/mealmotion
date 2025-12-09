@@ -1,45 +1,52 @@
-{% extends "account/base_entrance.html" %}
-{% load allauth i18n %}
-{% block head_title %}
-    {% trans "Signup" %}
-{% endblock head_title %}
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Up" %}
-    {% endelement %}
-    {% setvar link %}
-        <a href="{{ login_url }}">
-        {% endsetvar %}
-        {% setvar end_link %}
+<div class="container mt-4" style="max-width: 450px;">
+
+    <!--Return to Home-->
+    <div class="mb-3">
+        <a href="{% url 'home' %}" class="btn rounded-1 fn-shop">
+            <i class="fa-solid fa-chevron-left me-2"></i>
+            Home
         </a>
-    {% endsetvar %}
-    {% element p %}
-        {% blocktranslate %}Already have an account? Then please {{ link }}sign in{{ end_link }}.{% endblocktranslate %}
-    {% endelement %}
-    {% if not SOCIALACCOUNT_ONLY %}
-        {% url 'account_signup' as action_url %}
-        {% element form form=form method="post" action=action_url tags="entrance,signup" %}
-            {% slot body %}
-                {% csrf_token %}
-                {% element fields form=form unlabeled=True %}
-                {% endelement %}
-                {{ redirect_field }}
-            {% endslot %}
-            {% slot actions %}
-                {% element button tags="prominent,signup" type="submit" %}
-                    {% trans "Sign Up" %}
-                {% endelement %}
-            {% endslot %}
-        {% endelement %}
-    {% endif %}
-    {% if PASSKEY_SIGNUP_ENABLED %}
-        {% element hr %}
-        {% endelement %}
-        {% element button href=signup_by_passkey_url tags="prominent,signup,outline,primary" %}
-            {% trans "Sign up using a passkey" %}
-        {% endelement %}
-    {% endif %}
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
-{% endblock content %}
+    </div>
+
+    <div class="text-center">
+        <h2 class="text-uppercase">Create Account</h2>
+        <p class="text-muted small">Enter your details to sign up</p>
+    </div>
+
+    <form method="POST" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+
+        <!-- Crispy form fields -->
+        <div class="mb-4">
+            {{ form|crispy }}
+        </div>
+
+        {{ redirect_field }}
+
+        <!-- Submit -->
+        <button type="submit" class="btn w-100 rounded-1 fn-shop mt-3 mb-3">
+            {% trans "Sign Up" %}
+        </button>
+
+        <!-- Already have an account -->
+        <p class="text-muted mt-2 text-center">
+            {% blocktranslate %}
+            Already have an account? <a href="{{ login_url }}">Log in</a>
+            {% endblocktranslate %}
+        </p>
+    </form>
+</div>
+
+<!-- Extra spacing for crispy fields -->
+<style>
+    .form-group, .mb-3, .mb-4, .form-control {
+        margin-bottom: 1.2rem !important;
+    }
+</style>
+
+{% endblock %}

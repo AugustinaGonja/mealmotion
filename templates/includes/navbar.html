@@ -46,8 +46,8 @@
 
         <!-- Regular Links -->
         {% if user.is_authenticated %}
-        <li class="nav-item"><a class="nav-link" href="#">My Membership</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">My Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}        
         <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Membership</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
