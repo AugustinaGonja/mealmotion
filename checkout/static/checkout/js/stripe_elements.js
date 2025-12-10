@@ -34,15 +34,63 @@ card.mount('#card-element');
 
 // Form Submission
 
-form.addEventListener('submit', function (e) {
+form.addEventListener('submit', async function (e) {
     e.preventDefault(); 
 
-    stripe.confirmCardPayment(client_secret, {
+    const saveInfo = document.getElementById('id-save-info').checked; 
+    const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+
+    const postData = new FormData();
+    postData.append('csrfmiddlewaretoken', csrfToken);
+    postData.append('client_secret', clientSecret);
+    postData.append('save_info', saveInfo);
+
+    const url = '/checkout/cache_checkout_data/';
+
+    // Send POST request using fetch
+    fetch(url, {
+        method: 'POST',
+        body: postData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); 
+    })
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+    stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
             billing_details: {
                 name: form.full_name?.value || "",
                 email: form.email?.value || "",
+                address : {
+                  line1 : form.address_line_1?.value || "",
+                  line2 : form.address_line_2?.value || "",
+                  city : form.town_or_city?.value || "",
+                  country : form.country?.value || "",
+                  postal_code : form.post_code?.value || "",
+                  state : form.county?.value || "",
+                }
+            }
+        },
+        shipping: {
+            name: form.full_name?.value || "",
+            email: form.email?.value || "",
+            address : {
+              line1 : form.address_line_1?.value || "",
+              line2 : form.address_line_2?.value || "",
+              city : form.town_or_city?.value || "",
+              country : form.country?.value || "",
+              postal_code : form.post_code?.value || "",
+              state : form.county?.value || "",
             }
         }
     }).then(function (result) {
