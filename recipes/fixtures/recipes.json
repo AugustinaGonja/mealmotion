@@ -1,0 +1,64 @@
+[
+  {
+    "pk": 1,
+    "model": "recipes.recipe",
+    "fields": {
+      "name": "Lemon Herb Grilled Chicken",
+      "category": ["Meat", "High-Protein","Low-calorie"],
+      "serving_size": "1 plate",
+      "ingredients": [
+        "1 chicken breast",
+        "1 tbsp olive oil",
+        "1 tsp lemon zest",
+        "1 tsp garlic powder",
+        "Salt and pepper"
+      ],
+      "nutritional_value": {"calories": 310, "protein": 38, "carbohydrates": 2, "fat": 14},
+      "rating": 4.7,
+      "image_url": "https://www.eatyourselfskinny.com/wp-content/uploads/2024/04/lemon-chicken-2-1038x1536.jpg",
+      "image": "RC_1",
+      "instructions": "Marinate chicken with seasonings, grill 6-7 minutes per side."
+    }
+  },
+  {
+    "pk": 2,
+    "model": "recipes.recipe",
+    "fields": {
+      "name": "Beef & Pepper Stir Fry",
+      "category": ["Meat"],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "6 oz sliced beef",
+        "1 bell pepper",
+        "1 tbsp soy sauce",
+        "1 tsp sesame oil",
+        "1 garlic clove"
+      ],
+      "nutritional_value": {"calories": 420, "protein": 34, "carbohydrates": 10, "fat": 26},
+      "rating": 4.6,
+      "image_url": "https://www.cubesnjuliennes.com/wp-content/uploads/2021/01/Chinese-Beef-Stir-Fry-Recipe.jpg",
+      "image": "RC_2",
+      "instructions": "Stir fry beef, add peppers and sauce, cook until tender."
+    }
+  },
+  {
+    "pk": 3,
+    "model": "recipes.recipe",
+    "fields": {
+      "name": "Creamy Pesto Pasta",
+      "category": ["Vegetarian"],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1 cup pasta",
+        "2 tbsp pesto",
+        "2 tbsp cream",
+        "Salt & pepper"
+      ],
+      "nutritional_value": {"calories": 520, "protein": 12, "carbohydrates": 62, "fat": 26},
+      "rating": 4.4,
+      "image_url": "https://cdn.loveandlemons.com/wp-content/uploads/2025/07/pesto-pasta.jpg",
+      "image": "RC_3",
+      "instructions": "Cook pasta, stir in pesto and cream, simmer 2 minutes."
+    }
+  }
+]
