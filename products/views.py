@@ -69,6 +69,15 @@ def product_details(request, product_id):
     return render(request, 'products/product_details.html', context)
 
 def add_product(request):
+    """Add product to the store """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added a product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Product not addded.Please try again.')
     form = ProductForm()
     template = 'products/add_product.html'
     context = {

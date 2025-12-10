@@ -73,6 +73,11 @@
       </a>
 
       {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+        <a href="{% url 'add_product' %}" class="text-reset">
+          <i class="fa-solid fa-user fa-lg"></i>
+        </a>
+        {% endif %}
       <a href="{% url 'profile' %}" class="text-reset">
         <i class="fa-solid fa-user fa-lg"></i>
       </a>
@@ -122,3 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 {% endblock %}
+
+
+

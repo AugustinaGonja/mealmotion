@@ -15,8 +15,11 @@
             <div class="category-badge">
                 {{ product.category.friendly_name }}
             </div>
-
-            <img src="{{ product.image_url }}" class="img-fluid rounded" alt="{{ product.name }}">
+            {% if product.image %}
+                <img src="{{ product.image_url }}" class="img-fluid rounded" alt="{{ product.name }}">
+            {% else %}
+                <img src="{% static 'media/no-image-icon-0.jpg' %}" class="img-fluid rounded" alt="No Image Available">
+            {% endif %}
         </div>
 
         <!-- Product Details -->
