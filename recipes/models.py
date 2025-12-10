@@ -4,8 +4,8 @@ from django.db import models
 
 class Recipe(models.Model):
     name = models.CharField(max_length=255)
-    description = models.TextField()
     categories = models.ManyToManyField('Category', blank=True, related_name='recipes')
+    serving_size = models.CharField(max_length=50, blank=True)
     ingredients = models.JSONField()
     nutritional_value = models.JSONField()
     rating = models.DecimalField(max_digits=4, decimal_places=2)
