@@ -1,0 +1,24 @@
+Dear {{order_full_name}},
+
+Congratulations on your purchase from Mealmotion.com , it's being prepared as we speak.
+
+Your order information is below :
+
+Order Number: {{ order.order_number }}
+Order Number: {{ order.date }}
+
+Order Total: {{ order.order_total }}
+Delivery: {{ order.delivery_cost }}
+Grand Total: {{ order.grand_total }}
+
+Delivery Address:
+{{ order.address_line_1 }},
+{{ order.town_or_city}},
+{{ order.country }},
+
+
+Please feel free to reply to this email or give us a call on {{ contact_number }} if you have any questions.
+
+Thank you for your order!
+
+Mealmotion Team
