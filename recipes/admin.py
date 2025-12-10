@@ -3,7 +3,7 @@ from .models import Recipe, Category
 
 # Register your models here.
 
-class ProductAdmin(admin.ModelAdmin):
+class RecipeAdmin(admin.ModelAdmin):
     list_display = ('name', 'get_categories', 'rating')
     search_fields = ('name', 'ingredients', 'instructions')
     list_filter = ('categories',)
@@ -19,5 +19,5 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'friendly_name')
     search_fields = ('name',)
 
-admin.site.register(Recipe)
-admin.site.register(Category)
+admin.site.register(Recipe, RecipeAdmin)
+admin.site.register(Category, CategoryAdmin)
