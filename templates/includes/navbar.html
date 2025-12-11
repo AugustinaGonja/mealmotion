@@ -32,8 +32,23 @@
           </ul>
         </li>
 
+<<<<<<< HEAD
         <li class="nav-item">
           <a class="nav-link fw-bold" href="{% url 'recipes' %}">Recipe Catalouge</a>
+=======
+          <!-- Dropdown 2 -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'recipes' %}" id="recipeDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Recipe Catalogue</a>
+          <ul class="dropdown-menu dropdown-nav-mobile w-100" aria-labelledby="recipeDropdown">
+            <li><a class="dropdown-item fw-bold" href="{% url 'recipes' %}">All Recipes</a></li>
+            <li><a class="dropdown-item" href="#">High Protein</a></li>
+            <li><a class="dropdown-item" href="#">Low Calorie</a></li>
+            <li><a class="dropdown-item" href="#">Meaty Dishes</a></li>
+            <li><a class="dropdown-item" href="#">Fish and Seafood</a></li>
+            <li><a class="dropdown-item" href="#">Vegetarian</a></li>
+          </ul>
+>>>>>>> 36903af546209330fed934be86093642ec12cf7f
         </li>
 
         <!-- Regular Links -->
