@@ -1,0 +1,674 @@
+[
+  { 
+      "pk": 1,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Lemon Herb Grilled Chicken",
+      "categories": [1, 3, 4],
+      "serving_size": "1 plate",
+      "ingredients": [
+        "1 chicken breast",
+        "1 tbsp olive oil",
+        "1 tsp lemon zest",
+        "1 tsp garlic powder",
+        "Salt and pepper"
+      ],
+      "nutritional_value": {"calories": 310, "protein": 38, "carbohydrates": 2, "fat": 14},
+      "rating": 4.7,
+      "image_url": "https://www.eatyourselfskinny.com/wp-content/uploads/2024/04/lemon-chicken-2-1038x1536.jpg",
+      "image": "RC_1",
+      "instructions": "Marinate chicken with seasonings, grill 6-7 minutes per side."
+     }
+  },
+    {
+      "pk": 2,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef & Pepper Stir Fry",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "6 oz sliced beef",
+        "1 bell pepper",
+        "1 tbsp soy sauce",
+        "1 tsp sesame oil",
+        "1 garlic clove"
+      ],
+      "nutritional_value": {"calories": 420, "protein": 34, "carbohydrates": 10, "fat": 26},
+      "rating": 4.6,
+      "image_url": "https://www.cubesnjuliennes.com/wp-content/uploads/2021/01/Chinese-Beef-Stir-Fry-Recipe.jpg",
+      "image": "RC_2",
+      "instructions": "Stir fry beef, add peppers and sauce, cook until tender."
+     }
+    },
+    {
+      "pk": 3,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Creamy Pesto Pasta",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1 cup pasta",
+        "2 tbsp pesto",
+        "2 tbsp cream",
+        "Salt & pepper"
+      ],
+      "nutritional_value": {"calories": 520, "protein": 12, "carbohydrates": 62, "fat": 26},
+      "rating": 4.4,
+      "image_url": "https://cdn.loveandlemons.com/wp-content/uploads/2025/07/pesto-pasta.jpg",
+      "image": "RC_3",
+      "instructions": "Cook pasta, stir in pesto and cream, simmer 2 minutes."
+     }
+    },
+    {
+      "pk": 4,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Turkey Chili",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1/2 lb ground turkey",
+        "1 cup beans",
+        "1 cup tomatoes",
+        "Chili seasoning"
+      ],
+      "nutritional_value": {"calories": 400, "protein": 34, "carbohydrates": 28, "fat": 12},
+      "rating": 4.8,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIHj2CCFPOuy_a51IHq3C8quW2k8SHRN9pqg&s",
+      "image": "RC_4",
+      "instructions": "Brown turkey, add beans and tomatoes, simmer 20 minutes."
+     }
+    },
+    {
+      "pk": 5,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Omelette",
+      "categories": [1, 4],
+      "serving_size": "1 omelette",
+      "ingredients": [
+        "2 eggs",
+        "Spinach",
+        "Bell peppers",
+        "2 tbsp cheese"
+      ],
+      "nutritional_value": {"calories": 280, "protein": 20, "carbohydrates": 6, "fat": 18},
+      "rating": 4.5,
+      "image_url": "https://www.shecooksrecipes.com/wp-content/uploads/2025/07/veggie-omelette-featured.webp",
+      "image": "RC_5",
+      "instructions": "Cook veggies, add eggs and cheese, fold and serve."
+     }
+    },
+    {
+      "pk": 6,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Quinoa Power Bowl",
+      "categories": [2, 4],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1/2 cup quinoa",
+        "1/4 avocado",
+        "Cherry tomatoes",
+        "Spinach"
+      ],
+      "nutritional_value": {"calories": 330, "protein": 11, "carbohydrates": 40, "fat": 12},
+      "rating": 4.7,
+      "image_url": "https://www.feastingathome.com/wp-content/uploads/2013/08/Quinoa-Chicken-Salad.jpg",
+      "image": "RC_6",
+      "instructions": "Assemble cooked quinoa with veggies and serve."
+     }
+    },
+    {
+      "pk": 7,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Baked Salmon & Asparagus",
+      "categories": [1, 5],
+      "serving_size": "1 plate",
+      "ingredients": [
+        "6 oz salmon",
+        "Asparagus",
+        "1 tbsp olive oil",
+        "Lemon"
+      ],
+      "nutritional_value": {"calories": 460, "protein": 40, "carbohydrates": 5, "fat": 28},
+      "rating": 4.9,
+      "image_url": "https://www.laurafuentes.com/wp-content/uploads/2022/06/salmon-asparragus_post_1.jpg",
+      "image": "RC_7",
+      "instructions": "Season salmon and bake with asparagus for 15 minutes."
+     }
+    },
+    {
+      "pk": 8,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Caesar Wrap",
+      "categories": [1, 3],
+      "serving_size": "1 wrap",
+      "ingredients": [
+        "Grilled chicken",
+        "Tortilla",
+        "Lettuce",
+        "Caesar dressing"
+      ],
+      "nutritional_value": {"calories": 510, "protein": 32, "carbohydrates": 42, "fat": 24},
+      "rating": 4.2,
+      "image_url": "https://www.cherryonmysundae.com/wp-content/uploads/2025/02/chicken-caesar-wrap-feature.jpg",
+      "image": "RC_8",
+      "instructions": "Fill tortilla with chicken, lettuce, dressing, wrap and serve."
+     }
+    },
+    {
+      "pk": 9,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Avocado Toast",
+      "categories": [2, 4],
+      "serving_size": "1 slice",
+      "ingredients": [
+        "1 slice whole wheat toast",
+        "1/2 avocado",
+        "Salt & pepper"
+      ],
+      "nutritional_value": {"calories": 250, "protein": 8, "carbohydrates": 22, "fat": 15},
+      "rating": 4.6,
+      "image_url": "data:image/jpeg;base64,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",
+      "image": "RC_9",
+      "instructions": "Mash avocado on toast, season, and serve."
+     }
+    },
+    {
+      "pk": 10,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Shrimp Fried Rice",
+      "categories": [5],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1 cup cooked rice",
+        "1/2 cup shrimp",
+        "Peas",
+        "Soy sauce"
+      ],
+      "nutritional_value": {"calories": 480, "protein": 28, "carbohydrates": 56, "fat": 12},
+      "rating": 4.4,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVdvCFio-lEUlytbp5wUj-raA33ot89QFM6Q&s",
+      "image": "RC_10",
+      "instructions": "Sauté shrimp, add rice and veggies, stir in soy sauce."
+     }
+    },
+    {
+      "pk": 11,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "BBQ Chicken Bowl",
+      "categories": [1, 3],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken breast", "BBQ sauce", "Corn", "Rice"],
+      "nutritional_value": {"calories": 520, "protein": 36, "carbohydrates": 48, "fat": 18},
+      "rating": 4.7,
+      "image_url": "https://realfoodwholelife.com/wp-content/uploads/2022/06/BBQ-Chicken-Bowl-3-1024x1536.jpg",
+      "image": "RC_11",
+      "instructions": "Grill chicken, slice, and serve over rice with BBQ sauce."
+     }
+    },
+    {
+      "pk": 12,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Tacos",
+      "categories": [1],
+      "serving_size": "2 tacos",
+      "ingredients": ["Ground beef", "Taco shells", "Lettuce", "Cheese"],
+      "nutritional_value": {"calories": 610, "protein": 28, "carbohydrates": 44, "fat": 32},
+      "rating": 4.6,
+      "image_url": "https://loveandgoodstuff.com/wp-content/uploads/2020/08/classic-ground-beef-tacos-1200x1200.jpg",
+      "image": "RC_12",
+      "instructions": "Cook beef with seasoning, assemble tacos with toppings."
+     }
+    },
+    {
+      "pk": 13,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Tofu Teriyaki Bowl",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Tofu", "Teriyaki sauce", "Rice", "Broccoli"],
+      "nutritional_value": {"calories": 420, "protein": 18, "carbohydrates": 55, "fat": 12},
+      "rating": 4.8,
+      "image_url": "https://www.noracooks.com/wp-content/uploads/2023/07/teriyaki-tofu-1-2.jpg",
+      "image": "RC_13",
+      "instructions": "Pan fry tofu, add sauce, serve over rice with broccoli."
+     }
+    },
+    {
+      "pk": 14,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Cheesy Broccoli Soup",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Broccoli", "Cheddar", "Milk", "Garlic"],
+      "nutritional_value": {"calories": 360, "protein": 16, "carbohydrates": 22, "fat": 20},
+      "rating": 4.5,
+      "image_url": "https://tastesbetterfromscratch.com/wp-content/uploads/2019/08/Broccoli-Cheese-Soup-10-1-500x500.jpg",
+      "image": "RC_14",
+      "instructions": "Simmer broccoli, blend with cheese and milk."
+     }
+    },
+
+    {
+      "pk": 15,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Noodle Soup",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken", "Noodles", "Carrots", "Celery"],
+      "nutritional_value": {"calories": 310, "protein": 22, "carbohydrates": 32, "fat": 8},
+      "rating": 4.7,
+      "image_url": "https://www.recipetineats.com/tachyon/2017/05/Chicken-Noodle-Soup-from-scratch_3.jpg",
+      "image": "RC_15",
+      "instructions": "Simmer chicken with noodles and vegetables."
+     }
+    },
+
+    {
+      "pk": 16,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Stir Fry",
+      "categories": [2, 4],
+      "serving_size": "1 bowl",
+      "ingredients": ["Broccoli", "Carrots", "Bell pepper", "Soy sauce"],
+      "nutritional_value": {"calories": 210, "protein": 5, "carbohydrates": 28, "fat": 8},
+      "rating": 4.4,
+      "image_url": "https://images.themodernproper.com/production/posts/VegetableStirFry_9.jpg?w=1200&h=1200&q=60&fm=jpg&fit=crop&dm=1703377301&s=79d95f7318643d92c30863f226d5eb8e",
+      "image": "RC_16",
+      "instructions": "Stir fry vegetables with sauce until tender."
+     }
+    },
+
+    {
+      "pk": 17,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Baked Tilapia",
+      "categories": [5, 3],
+      "serving_size": "1 fillet",
+      "ingredients": ["Tilapia", "Lemon", "Garlic", "Butter"],
+      "nutritional_value": {"calories": 280, "protein": 36, "carbohydrates": 1, "fat": 12},
+      "rating": 4.8,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSouOXKIKBUDZOFBbHtTdvbIrIPaPi1kR9Ptg&s",
+      "image": "RC_17",
+      "instructions": "Season fish and bake for 12 minutes."
+     }
+    },
+
+    {
+      "pk": 18,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Alfredo",
+      "categories": [1, 3],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken breast", "Pasta", "Cream", "Parmesan"],
+      "nutritional_value": {"calories": 720, "protein": 40, "carbohydrates": 60, "fat": 36},
+      "rating": 4.6,
+      "image_url": "https://midwestfoodieblog.com/wp-content/uploads/2023/07/chicken-alfredo-1-2.jpg",
+      "image": "RC_18",
+      "instructions": "Cook pasta, stir in creamy Alfredo, add chicken."
+     }
+    },
+
+    {
+      "pk": 19,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Burger",
+      "categories": [1],
+      "serving_size": "1 burger",
+      "ingredients": ["Beef patty", "Bun", "Lettuce", "Tomato"],
+      "nutritional_value": {"calories": 650, "protein": 35, "carbohydrates": 40, "fat": 38},
+      "rating": 4.3,
+      "image_url": "https://media-cdn2.greatbritishchefs.com/media/xd1av5ag/img25737.whqc_768x512q90.jpg",
+      "image": "RC_19",
+      "instructions": "Grill beef patty, assemble burger with toppings."
+     }
+    },
+
+    {
+      "pk": 20,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Grilled Veggie Sandwich",
+      "categories": [2],
+      "serving_size": "1 sandwich",
+      "ingredients": ["Zucchini", "Bell pepper", "Cheese", "Bread"],
+      "nutritional_value": {"calories": 420, "protein": 14, "carbohydrates": 52, "fat": 16},
+      "rating": 4.5,
+      "image_url": "https://wholefully.com/wp-content/uploads/2016/07/grilled-veggie-sandwich-4.jpg",
+      "image": "RC_20",
+      "instructions": "Grill veggies and assemble sandwich with cheese."
+     }
+    },
+
+    {
+      "pk": 21,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Steak & Potatoes",
+      "categories": [1],
+      "serving_size": "1 plate",
+      "ingredients": ["Steak", "Potatoes", "Salt", "Pepper"],
+      "nutritional_value": {"calories": 610, "protein": 42, "carbohydrates": 28, "fat": 36},
+      "rating": 4.8,
+      "image_url": "https://www.lecremedelacrumb.com/wp-content/uploads/2019/03/steak-potatoes-skillet-3.jpg",
+      "image": "RC_21",
+      "instructions": "Pan-sear steak, roast potatoes, serve together."
+     }
+    },
+
+    {
+      "pk": 22,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Vegan Burrito",
+      "categories": [2],
+      "serving_size": "1 wrap",
+      "ingredients": ["Beans", "Rice", "Lettuce", "Tomato"],
+      "nutritional_value": {"calories": 480, "protein": 14, "carbohydrates": 72, "fat": 12},
+      "rating": 4.6,
+      "image_url": "https://plantedinthekitchen.com/wp-content/uploads/2021/12/Vegan-Burrito-11.jpg",
+      "image": "RC_22",
+      "instructions": "Fill tortilla with beans, rice, and veggies, wrap tightly."
+     }
+    },
+
+    {
+      "pk": 23,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Pita",
+      "categories": [1],
+      "serving_size": "1 pita",
+      "ingredients": ["Grilled chicken", "Pita", "Yogurt sauce", "Cucumber"],
+      "nutritional_value": {"calories": 540, "protein": 32, "carbohydrates": 48, "fat": 22},
+      "rating": 4.5,
+      "image_url": "https://www.thefooddoctor.com/wp-content/uploads/2019/12/chicken-tikka-pitta-pockets-min-scaled.jpg",
+      "image": "RC_23",
+      "instructions": "Stuff pita with chicken and veggies, drizzle sauce."
+     }
+    },
+
+    {
+      "pk": 24,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Cheese Quesadilla",
+      "categories": [2],
+      "serving_size": "1 quesadilla",
+      "ingredients": ["Tortilla", "Cheddar cheese"],
+      "nutritional_value": {"calories": 420, "protein": 15, "carbohydrates": 28, "fat": 26},
+      "rating": 4.2,
+      "image_url": "https://kidsactivityzone.com/wp-content/uploads/2024/09/Cheese-Quesadilla-14-of-26.jpg",
+      "image": "RC_24",
+      "instructions": "Melt cheese in tortilla on skillet."
+     }
+    },
+
+    {
+      "pk": 25,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Salmon Poke Bowl",
+      "categories": [5, 1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Salmon", "Rice", "Cucumber", "Sesame"],
+      "nutritional_value": {"calories": 520, "protein": 36, "carbohydrates": 48, "fat": 20},
+      "rating": 4.9,
+      "image_url": "https://seasonandthyme.com/wp-content/uploads/2024/04/cooked-salmon-poke-bowl-featured.jpgl",
+      "image": "RC_25",
+      "instructions": "Assemble bowl with rice, salmon, and toppings."
+     }
+    },
+
+    {
+      "pk": 26,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Pancakes with Syrup",
+      "categories": [2],
+      "serving_size": "3 pancakes",
+      "ingredients": ["Flour", "Milk", "Egg", "Syrup"],
+      "nutritional_value": {"calories": 560, "protein": 12, "carbohydrates": 84, "fat": 18},
+      "rating": 4.3,
+      "image_url": "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/fluffyamericanpancak_74828_16x9.jpg",
+      "image": "RC_26",
+      "instructions": "Mix batter, cook pancakes, add syrup."
+     }
+    },
+    {
+      "pk": 27,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Pizza",
+      "categories": [2],
+      "serving_size": "2 slices",
+      "ingredients": ["Pizza dough", "Cheese", "Tomato sauce", "Veggies"],
+      "nutritional_value": {"calories": 470, "protein": 18, "carbohydrates": 56, "fat": 18},
+      "rating": 4.5,
+      "image_url": "https://cookieandkate.com/images/2020/10/best-veggie-pizza-recipe-1.jpg",
+      "image": "RC_27",
+      "instructions": "Assemble pizza and bake until golden."
+     }
+    },
+
+    {
+      "pk": 28,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Rice Bowl",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Ground beef", "Rice", "Green onions", "Soy sauce"],
+      "nutritional_value": {"calories": 580, "protein": 32, "carbohydrates": 48, "fat": 28},
+      "rating": 4.4,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-c_DFJE0mGlcbqalX_YLk3ToxPc1YymZQCA&s",
+      "image": "RC_28",
+      "instructions": "Cook beef, serve over rice with sauce."
+     }
+    },
+
+    {
+      "pk": 29,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Vegetable Soup",
+      "categories": [2,4],
+      "serving_size": "1 bowl",
+      "ingredients": ["Carrots", "Celery", "Potatoes", "Broth"],
+      "nutritional_value": {"calories": 180, "protein": 4, "carbohydrates": 32, "fat": 3},
+      "rating": 4.2,
+      "image_url": "https://thecozyapron.com/wp-content/uploads/2018/07/vegetable-soup_thecozyapron_1.jpg",
+      "image": "RC_29",
+      "instructions": "Simmer vegetables in broth until soft."
+     }
+    },
+
+    {
+      "pk": 30,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Burrito Bowl",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken", "Rice", "Beans", "Corn"],
+      "nutritional_value": {"calories": 560, "protein": 42, "carbohydrates": 60, "fat": 16},
+      "rating": 4.8,
+      "image_url": "https://www.simplyrecipes.com/thmb/nlKPYgXiDFmgvz12KqtggUYba-c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2016__07__2016-08-03-BBQ-Chicken-Bowls-9-a194953f9f1940e3938265f2fd8d7813.jpg",
+      "image": "RC_30",
+      "instructions": "Assemble bowl with rice, chicken, and toppings."
+     }
+    },
+
+    {
+      "pk": 31,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Pasta",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Ground beef", "Pasta", "Tomato sauce"],
+      "nutritional_value": {"calories": 680, "protein": 35, "carbohydrates": 68, "fat": 30},
+      "rating": 4.3,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfok3ERVC1Fxk7B1C0i_9OtFoY-KEZy-uoA&s",
+      "image": "RC_31",
+      "instructions": "Cook pasta, add beef and sauce, stir."
+     }
+    },
+
+    {
+      "pk": 32,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Spinach Salad",
+      "categories": [2, 4],
+      "serving_size": "1 bowl",
+      "ingredients": ["Spinach", "Tomatoes", "Feta cheese", "Olive oil"],
+      "nutritional_value": {"calories": 250, "protein": 8, "carbohydrates": 10, "fat": 18},
+      "rating": 4.5,
+      "image_url": "https://sabrinacurrie.com/wp-content/uploads/2023/12/Easy-Greek-Spinach-Salad-Recipe-With-Feta-And-Lemon-16.jpg",
+      "image": "RC_32",
+      "instructions": "Mix ingredients in a bowl and serve."
+     }
+    },
+
+    {
+      "pk": 33,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Curry",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken", "Coconut milk", "Curry powder"],
+      "nutritional_value": {"calories": 520, "protein": 38, "carbohydrates": 10, "fat": 34},
+      "rating": 4.7,
+      "image_url": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chicken_curry_61994_16x9.jpg",
+      "image": "RC_33",
+      "instructions": "Cook chicken, add curry sauce, simmer."
+     }
+    },
+    {
+      "pk": 34,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Wrap",
+      "categories": [2, 4],
+      "serving_size": "1 wrap",
+      "ingredients": ["Tortilla", "Lettuce", "Veggies", "Hummus"],
+      "nutritional_value": {"calories": 340, "protein": 8, "carbohydrates": 46, "fat": 12},
+      "rating": 4.4,
+      "image_url": "https://www.bowlofdelicious.com/wp-content/uploads/2014/01/Veggie-Wraps-square.jpgp",
+      "image": "RC_34",
+      "instructions": "Spread hummus, add veggies, roll tightly."
+     }
+    },
+    {
+      "pk": 35,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Grilled Pork Chops",
+      "categories": [1, 3],
+      "serving_size": "1 plate",
+      "ingredients": ["Pork chops", "Salt", "Pepper", "Garlic"],
+      "nutritional_value": {"calories": 490, "protein": 42, "carbohydrates": 0, "fat": 32},
+      "rating": 4.6,
+      "image_url": "https://www.wellplated.com/wp-content/uploads/2021/07/Plain-Grilled-Pork-Chops.jpg",
+      "image": "RC_35",
+      "instructions": "Season and grill pork for 4-5 minutes each side."
+     }
+    },
+    {
+      "pk": 36,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Cheese Pasta",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Pasta", "Cheddar", "Butter"],
+      "nutritional_value": {"calories": 640, "protein": 18, "carbohydrates": 72, "fat": 28},
+      "rating": 4.1,
+      "image_url": "https://www.lovefromtheoven.com/wp-content/uploads/2023/04/one-pot-mac-cheese-17.jpg",
+      "image": "RC_36",
+      "instructions": "Cook pasta, melt cheese and butter into sauce."
+     }
+    },
+    {
+      "pk": 37,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Vegan Buddha Bowl",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Sweet potatoes", "Chickpeas", "Spinach", "Tahini"],
+      "nutritional_value": {"calories": 440, "protein": 14, "carbohydrates": 58, "fat": 16},
+      "rating": 4.9,
+      "image_url": "https://heartfultable.com/wp-content/uploads/2021/05/Quinoa-and-Chickpea-Buddha-Bowl-with-Tahini-Dressing.jpg",
+      "image": "RC_37",
+      "instructions": "Roast ingredients and assemble into bowl."
+     }
+    },
+
+    {
+      "pk": 38,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Salad",
+      "categories": [1, 3, 4],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken breast", "Lettuce", "Olive oil"],
+      "nutritional_value": {"calories": 320, "protein": 38, "carbohydrates": 4, "fat": 16},
+      "rating": 4.7,
+      "image_url": "https://www.skinnytaste.com/wp-content/uploads/2008/07/Classic-Chicken-Salad-4.jpg",
+      "image": "RC_38",
+      "instructions": "Mix cooked chicken with fresh greens."
+     }
+    },
+
+    {
+      "pk": 39,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Stew",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Beef chunks", "Carrots", "Potatoes", "Broth"],
+      "nutritional_value": {"calories": 480, "protein": 36, "carbohydrates": 28, "fat": 22},
+      "rating": 4.8,
+      "image_url": "https://static01.nyt.com/images/2024/10/28/multimedia/beef-stew-mlfk/beef-stew-mlfk-mediumSquareAt3X.jpg",
+      "image": "RC_39",
+      "instructions": "Simmer all ingredients for 1 hour."
+     }
+    },
+
+    {
+      "pk": 40,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Fried Rice",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Rice", "Egg", "Peas", "Carrots", "Soy sauce"],
+      "nutritional_value": {"calories": 420, "protein": 14, "carbohydrates": 54, "fat": 12},
+      "rating": 4.3,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVj6dMQ0NpkQ9EgJ-Kx9RExCSCF1go4iMJlw&s",
+      "image": "RC_40",
+      "instructions": "Stir fry rice with veggies and scrambled egg."
+     }
+    }
+]

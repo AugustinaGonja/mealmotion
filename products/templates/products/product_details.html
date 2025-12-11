@@ -28,12 +28,20 @@
                 <h1 class="mb-0">{{ product.name }}</h1>
                 <i class="fa-solid fa-heart-circle-plus fa-xl"></i>
             </div>
-            <div class="d-flex align-items-center mb-3">
-                <strong class="me-2">
+            <div class="d-flex align-items-center">
+                <strong>
                     <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                    {{ product.rating }} / 5
+                    {{ product.rating }}/5
                 </strong>
             </div>
+            
+            <!--Product Management-->
+            {% if request.user.is_superuser %}
+                <small class="mb-3">
+                    <a href="{% url 'edit_product' product.id %}">Edit</a>
+                    <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
+                </small>
+            {% endif %}        
 
             <p class="mb-4 fs-6 text-muted">{{ product.description }}</p>
 

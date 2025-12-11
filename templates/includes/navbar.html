@@ -74,18 +74,19 @@
 
       {% if user.is_authenticated %}
         {% if user.is_superuser %}
-        <a href="{% url 'add_product' %}" class="text-reset">
-          <i class="fa-solid fa-user fa-lg"></i>
-        </a>
+            <a href="{% url 'add_product' %}" class="text-reset">
+                <i class="fa-solid fa-user fa-lg"></i>
+            </a>
+        {% else %}
+            <a href="{% url 'profile' %}" class="text-reset">
+                <i class="fa-solid fa-user fa-lg"></i>
+            </a>
         {% endif %}
-      <a href="{% url 'profile' %}" class="text-reset">
-        <i class="fa-solid fa-user fa-lg"></i>
-      </a>
-      {% else %}
-      <a href="{% url 'account_login' %}" class="text-reset">
-        <i class="fa-solid fa-user fa-lg"></i>
-      </a>
-      {% endif %}
+    {% else %}
+        <a href="{% url 'account_login' %}" class="text-reset">
+            <i class="fa-solid fa-user fa-lg"></i>
+        </a>
+    {% endif %}
 
       <div class="position-relative">
         <a href="{% url 'bag' %}" class="text-reset text-decoration-none">

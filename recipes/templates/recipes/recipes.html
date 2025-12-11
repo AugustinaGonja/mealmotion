@@ -4,19 +4,20 @@
 {% block content %}
 
 <div class="container my-5">
-    <div class="mb-4 text-center">
+    <div class="mb-2 text-center">
         {% if not current_categories %}
-        <h1>Products</h1>
+        <h1>Recipe Catalogue</h1>
+        <p class="text-muted">Browse the menu to find a recipe that suits your needs</p>
         {% else %}
         <h1 class="text-center">{{ category_objects.first.friendly_name }}</h1>
         {% endif %}
         <p>
             {% if search_term or current_categories or current_sorting %}
-            <span><a class="link-offset-1" href="{% url 'products' %}">Fitness & Nutrition Home</a> | </span>
+            <span><a class="link-offset-1" href="{% url 'recipes' %}">All Recipes</a> | </span>
             {% else %}
             <span><a class="link-offset-1" href="{% url 'home' %}">Return to Home</a> | </span>
             {% endif %}
-            {{total_products}} Products {% if search_term %} found for "{{search_term}}"{% endif %}
+            {{total_products}} Recipes {% if search_term %} found for "{{search_term}}"{% endif %}
         </p>
     </div>
     <hr>
@@ -29,11 +30,11 @@
             Filter By Category
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplement</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a>
-            </li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">High Protein</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Low Calorie</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Meaty Dishes</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fish and Seafood</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Vegetarian</a></li>
         </ul>
 
         <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown"
@@ -61,10 +62,6 @@
                     (A-Z)</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=desc">Name
                     (Z-A)</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Price
-                    (Low-High)</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc">Price
-                    (High-Low)</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating</a></li>
         </ul>
     </div>
@@ -72,34 +69,38 @@
 
 <div class="container">
     <div class="row">
-        {% for product in products %}
+        {% for recipe in recipes %}
         <div class="col-md-3 mb-4">
-            <!--Container contents wrapped in link to product details-->
-            <a href="{% url 'product_details' product.id %}" class="text-dark text-decoration-none d-block">
-                <div class="category-badge"><i class="fa-solid fa-tags"></i>
-                    {{ product.category.friendly_name }}
+            <!--Container contents wrapped in link to recipe details-->
+            <a href="{% url 'recipe_details' recipe.id %}" class="text-dark text-decoration-none d-block">
+                <div class="category-badge">
+                    <i class="fa-solid fa-utensils me-2"></i>
+                    {% for category in recipe.categories.all %}
+                        {{ category.friendly_name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
                 </div>
-                {% if product.image %}
-                <img src="{{ product.image_url }}" class="product-image w-100" alt="{{ product.name }}">
+                {% if recipe.image %}
+                <img src="{{ recipe.image_url }}" class="recipe-image w-100" alt="{{ recipe.name }}">
                 {% else %}
-                <img src="{% static 'media/no-image-icon-0.jpg' %}" class="product-image w-100"
+                <img src="{% static 'media/no-image-icon-0.jpg' %}" class="recipe-image w-100"
                     alt="No Image Available">
                 {% endif %}
-                <!--Product Info-->
+                <!--Recipe Info-->
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                    <h5 class="fs-5 mb-0">{{ product.name }}</h5>
-                    <div class="d-flex align-items-center">
-                        <small>
-                            <strong>
-                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                                {{ product.rating }}/5
-                            </strong>
-                        </small>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="fs-5 mb-2">{{ recipe.name }}</h5>
+                            <small>
+                                <strong class="text-end">
+                                    <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
+                                    {{ recipe.rating }}/5
+                                </strong>
+                            </small>
+                        </div>
+                        <p class="fw-bold">{{ recipe.nutritional_value.calories }} Kcal</p>
                     </div>
                 </div>
-                <p class="mb-2 fs-6 text-muted product-description">{{ product.description }}</p>
                 <div class="d-flex justify-content-between">
-                    <p class="fw-bold fs-6">£ {{ product.price }}</p>
                     <!--Product Management-->
                     {% if request.user.is_superuser %}
                         <small>
@@ -114,7 +115,7 @@
     </div>
 </div>
 <!--Back to Top Button-->
-{% if products %}
+{% if recipes %}
 <div class="d-flex justify-content-center">
     <button type="button" class="btn rounded-1 fn-shop text-uppercase text-center mb-5" id="btt-btn"
         onclick="topFunction()">
