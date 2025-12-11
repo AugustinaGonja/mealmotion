@@ -72,9 +72,12 @@
         {% for recipe in recipes %}
         <div class="col-md-3 mb-4">
             <!--Container contents wrapped in link to recipe details-->
-            <a href="#" class="text-dark text-decoration-none d-block">
-                <div class="category-badge"><i class="fa-solid fa-tags"></i>
-                    {{ recipe.category.friendly_name }}
+            <a href="{% url 'recipe_details' recipe.id %}" class="text-dark text-decoration-none d-block">
+                <div class="category-badge">
+                    <i class="fa-solid fa-utensils me-2"></i>
+                    {% for category in recipe.categories.all %}
+                        {{ category.friendly_name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
                 </div>
                 {% if recipe.image %}
                 <img src="{{ recipe.image_url }}" class="recipe-image w-100" alt="{{ recipe.name }}">
@@ -84,17 +87,17 @@
                 {% endif %}
                 <!--Recipe Info-->
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                    <div class="d- flex-column">
-                        <h5 class="fs-5 mb-2">{{ recipe.name }}</h5>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="fs-5 mb-2">{{ recipe.name }}</h5>
+                            <small>
+                                <strong class="text-end">
+                                    <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
+                                    {{ recipe.rating }}/5
+                                </strong>
+                            </small>
+                        </div>
                         <p class="fw-bold">{{ recipe.nutritional_value.calories }} Kcal</p>
-                    </div>
-                    <div>
-                        <small>
-                            <strong>
-                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                                {{ recipe.rating }}/5
-                            </strong>
-                        </small>
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">

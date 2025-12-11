@@ -172,13 +172,13 @@ p.subtitle {
     color: #79b4e2;
 }
 
-.product-header {
+.product-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.product-header i {
+.product-header i, .recipe-header i {
     cursor: pointer;
     color: #a31621;
 }
