@@ -2,23 +2,21 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block content %}
-<div class="container mt-4" style="max-width: 450px;">
-
-    <!--Return to Home-->
-    <div class="mb-3">
-        <a href="{% url 'home' %}" class="btn rounded-1 fn-shop">
-            <i class="fa-solid fa-chevron-left me-2"></i>
-            Home
-        </a>
-    </div>
-
-    <div class="text-center">
+{% block content %}    
+<!--Return to Home-->
+<div class="m-3">
+    <a href="{% url 'home' %}" class="btn rounded-1 fn-shop">
+        <i class="fa-solid fa-chevron-left me-2"></i>
+        Home
+    </a> 
+</div>
+<div class="container mt-2 mb-4 form-box shadow-sm" style="max-width: 450px;">
+    <div class="text-center mt-4">
         <h2 class="text-uppercase">Create Account</h2>
         <p class="text-muted small">Enter your details to sign up</p>
     </div>
 
-    <form method="POST" action="{% url 'account_signup' %}">
+    <form action="{% url 'account_signup' %}">
         {% csrf_token %}
 
         <!-- Crispy form fields -->

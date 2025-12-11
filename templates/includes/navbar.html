@@ -32,28 +32,12 @@
           </ul>
         </li>
 
-<<<<<<< HEAD
         <li class="nav-item">
           <a class="nav-link fw-bold" href="{% url 'recipes' %}">Recipe Catalouge</a>
-=======
-          <!-- Dropdown 2 -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{% url 'recipes' %}" id="recipeDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">Recipe Catalogue</a>
-          <ul class="dropdown-menu dropdown-nav-mobile w-100" aria-labelledby="recipeDropdown">
-            <li><a class="dropdown-item fw-bold" href="{% url 'recipes' %}">All Recipes</a></li>
-            <li><a class="dropdown-item" href="#">High Protein</a></li>
-            <li><a class="dropdown-item" href="#">Low Calorie</a></li>
-            <li><a class="dropdown-item" href="#">Meaty Dishes</a></li>
-            <li><a class="dropdown-item" href="#">Fish and Seafood</a></li>
-            <li><a class="dropdown-item" href="#">Vegetarian</a></li>
-          </ul>
->>>>>>> 36903af546209330fed934be86093642ec12cf7f
         </li>
 
         <!-- Regular Links -->
         {% if user.is_authenticated %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">My Membership</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}        
         <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Membership</a></li>
@@ -63,7 +47,7 @@
     </div>
 
     <!-- Nav Icons -->
-    <div class="d-flex align-items-center gap-3 order-2 order-lg-3 ms-auto">
+    <div class="d-flex align-items-center gap-3 order-2 order-lg-3 ms-auto flex-nowrap">
       <form method="GET" action="{% url 'products' %}" class="togglesearch" style="display: none;">
         <div class="input-group input-group-sm">
           <input class="form-control" type="search" name="q" placeholder="Search for Products..." aria-label="Search">
@@ -79,13 +63,19 @@
 
       {% if user.is_authenticated %}
         {% if user.is_superuser %}
-            <a href="{% url 'add_product' %}" class="text-reset">
-                <i class="fa-solid fa-user fa-lg"></i>
-            </a>
+            <div class="nav-icon">
+                <a href="{% url 'add_product' %}" class="text-reset">
+                    <i class="fa-solid fa-user fa-lg"></i>
+                </a>
+                <p>Manage</p>
+            </div>
         {% else %}
-            <a href="{% url 'profile' %}" class="text-reset">
-                <i class="fa-solid fa-user fa-lg"></i>
-            </a>
+            <div class="nav-icon">
+              <a href="{% url 'profile' %}" class="text-reset">
+                  <i class="fa-solid fa-user fa-lg"></i>
+              </a>
+              <p>My Account</p>
+          </div>
         {% endif %}
     {% else %}
         <a href="{% url 'account_login' %}" class="text-reset">
@@ -93,11 +83,11 @@
         </a>
     {% endif %}
 
-      <div class="position-relative">
+      <div class="nav-icon position-relative">
         <a href="{% url 'bag' %}" class="text-reset text-decoration-none">
           <i class="fa-solid fa-bag-shopping fa-lg"></i>
         </a>
-        <p class="position-absolute top-50 start-50 translate-middle mt-3 bag-price">
+        <p class="bag-price">
           {% if grand_total %}
           £{{ grand_total|floatformat:2 }}
           {% else %}

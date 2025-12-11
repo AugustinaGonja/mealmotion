@@ -5,78 +5,17 @@
 
 <div class="container my-5">
     <div class="mb-2 text-center">
-<<<<<<< HEAD
         <h1>Recipe Catalogue</h1>
         <p class="text-muted">Browse the menu to find a recipe that suits your needs</p>
         <h1 class="text-center">{{ category_objects.first.friendly_name }}</h1>
         <p>
             <span><a class="link-offset-1" href="{% url 'home' %}">Return to Home</a></span>
-=======
-        {% if not current_categories %}
-        <h1>Recipe Catalogue</h1>
-        <p class="text-muted">Browse the menu to find a recipe that suits your needs</p>
-        {% else %}
-        <h1 class="text-center">{{ category_objects.first.friendly_name }}</h1>
-        {% endif %}
-        <p>
-            {% if search_term or current_categories or current_sorting %}
-            <span><a class="link-offset-1" href="{% url 'recipes' %}">All Recipes</a> | </span>
-            {% else %}
-            <span><a class="link-offset-1" href="{% url 'home' %}">Return to Home</a> | </span>
-            {% endif %}
-            {{total_products}} Recipes {% if search_term %} found for "{{search_term}}"{% endif %}
->>>>>>> 36903af546209330fed934be86093642ec12cf7f
         </p>
     </div>
     <hr>
 
-<<<<<<< HEAD
     <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
  
-=======
-    <!--Sort and Filter Buttons-->
-    <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
-
-        <button class="btn rounded-1 fn-shop dropdown-toggle text-uppercase" type="button" id="sortDropdown"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Filter By Category
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">High Protein</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Low Calorie</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Meaty Dishes</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fish and Seafood</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Vegetarian</a></li>
-        </ul>
-
-        <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            {% if not request.GET.sort %}
-            Sort By . . .
-            {% else %}
-            Sort By |
-            {% if request.GET.sort == "category" %}
-            Category ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
-            {% elif request.GET.sort == "name" %}
-            Name ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
-            {% elif request.GET.sort == "price" %}
-            Price ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
-            {% elif request.GET.sort == "rating" %}
-            Rating
-            {% endif %}
-            {% endif %}
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">Category (A-Z)</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=desc">Category (Z-A)</a>
-            </li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc">Name
-                    (A-Z)</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=desc">Name
-                    (Z-A)</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating</a></li>
-        </ul>
->>>>>>> 36903af546209330fed934be86093642ec12cf7f
     </div>
 </div>
 
@@ -101,26 +40,15 @@
                 <!--Recipe Info-->
                 <div class="d-flex justify-content-between align-items-center mt-3">
                     <div class="d-flex flex-column">
-                        <div class="d-flex justify-content-between">
                             <h5 class="fs-5 mb-2">{{ recipe.name }}</h5>
+                            <p class="fw-bold mb-2">{{ recipe.nutritional_value.calories }} Kcal</p>
                             <small>
-                                <strong class="text-end">
+                                <strong>
                                     <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
                                     {{ recipe.rating }}/5
                                 </strong>
                             </small>
-                        </div>
-                        <p class="fw-bold">{{ recipe.nutritional_value.calories }} Kcal</p>
                     </div>
-                </div>
-                <div class="d-flex justify-content-between">
-                    <!--Product Management-->
-                    {% if request.user.is_superuser %}
-                        <small>
-                            <a href="{% url 'edit_product' product.id %}">Edit</a>
-                            <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
-                        </small>
-                    {% endif %}
                 </div>
             </a>
         </div>

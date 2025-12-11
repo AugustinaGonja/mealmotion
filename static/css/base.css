@@ -75,6 +75,18 @@ p.subtitle {
     font-size: 12px;
 }
 
+.nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 50px;
+}
+.nav-icon p {
+    margin: 2px 0 0;
+    font-size: 12px;
+}
+
 /* Buttons */
 .fn-shop, .form-btn {
     background-color: #333533 !important;
@@ -181,6 +193,10 @@ p.subtitle {
 .product-header i, .recipe-header i {
     cursor: pointer;
     color: #a31621;
+}
+.form-box {
+    border-radius: 4px;
+    background-color: #e9e3dc;
 }
 
 /* Media Queries */
