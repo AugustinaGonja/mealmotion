@@ -187,13 +187,6 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
 
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
-
 FREE_DELIVERY_THRESHOLD = Decimal('50')
 STANDARD_DELIVERY = Decimal('3.99')
 
