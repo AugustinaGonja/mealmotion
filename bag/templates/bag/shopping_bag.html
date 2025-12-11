@@ -14,10 +14,10 @@
     <div class="row gy-1">
       <div class=" col-md-7 text-start">
         <h3 class="text-uppercase">Your Bag<small>
-            {% if product_count %}({{ product_count }}){% endif %}</small>
+            {% if product_count %}({{ product_count }})</small>
         </h3>
         <p>Order Total | <strong>£{{ total|floatformat:2 }}</strong></p>
-        <p class="fw-bold fs-6">Product Info</p>
+        <p class="fw-bold fs-6">Product Info</p>{% endif %}
 
         <!--Bag Items-->
         {% if bag_items %}
@@ -106,7 +106,7 @@
     </div>
   </div>     
       {% else %}
-        <p>Your bag is empty.</p>
+        <p class="mt-3">Your bag is empty.</p>
         <a href="{% url 'products' %}" class="btn rounded-1 text-uppercase mb-4 fn-shop">
           <i class="fa-solid fa-chevron-left fa-xs me-2"></i>
           Browse Shop

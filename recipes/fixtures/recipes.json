@@ -4,7 +4,7 @@
       "model": "recipes.recipe",
       "fields":{
       "name": "Lemon Herb Grilled Chicken",
-      "categories": [1, 3, 4],
+      "categories": [1, 3],
       "serving_size": "1 plate",
       "ingredients": [
         "1 chicken breast",
@@ -629,7 +629,7 @@
       "model": "recipes.recipe",
       "fields":{
       "name": "Chicken Salad",
-      "categories": [1, 3, 4],
+      "categories": [1, 3],
       "serving_size": "1 bowl",
       "ingredients": ["Chicken breast", "Lettuce", "Olive oil"],
       "nutritional_value": {"calories": 320, "protein": 38, "carbohydrates": 4, "fat": 16},

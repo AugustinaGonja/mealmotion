@@ -32,16 +32,8 @@
           </ul>
         </li>
 
-          <!-- Dropdown 2 -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="recipeDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">Recipe Catalogue</a>
-          <ul class="dropdown-menu dropdown-nav-mobile w-100" aria-labelledby="recipeDropdown">
-            <li><a class="dropdown-item fw-bold" href="#">All Recipes</a></li>
-            <li><a class="dropdown-item" href="#">Category 1</a></li>
-            <li><a class="dropdown-item" href="#">Category 2</a></li>
-            <li><a class="dropdown-item" href="#">Category 3</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link fw-bold" href="{% url 'recipes' %}">Recipe Catalouge</a>
         </li>
 
         <!-- Regular Links -->
@@ -52,8 +44,6 @@
         <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Membership</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
         {% endif %}
-        <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#">
-            Quiz<i class="fa-solid fa-caret-right fa-sm ps-1"></i></a></li>
       </ul>
     </div>
 
@@ -61,7 +51,7 @@
     <div class="d-flex align-items-center gap-3 order-2 order-lg-3 ms-auto">
       <form method="GET" action="{% url 'products' %}" class="togglesearch" style="display: none;">
         <div class="input-group input-group-sm">
-          <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
+          <input class="form-control" type="search" name="q" placeholder="Search for Products..." aria-label="Search">
           <button class="btn text-uppercase form-btn" type="submit">
             <i class="fa-solid fa-magnifying-glass fa-lg"></i>
           </button>
