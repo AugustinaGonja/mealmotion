@@ -137,8 +137,8 @@ p.subtitle {
 }
 
 
-/* Products */
-.product-image {
+/* Products & Recipes */
+.product-image , .recipe-image {
     width: 100%;         
     height: 350px;       
     object-fit:cover;
