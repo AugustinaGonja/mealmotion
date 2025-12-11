@@ -38,7 +38,7 @@ SECRET_KEY = 'django-insecure-o+_w&b#ba+%01wa@ibg95@(9y8rh$2!p_dk5oc7+cy7bd2t#&p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','meal-motion-958ec306f33c.herokuapp.com',]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','.herokuapp.com',]
 
 
 # Application definition
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -68,9 +69,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 ROOT_URLCONF = 'mealmotion.urls'
 
@@ -175,8 +174,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
