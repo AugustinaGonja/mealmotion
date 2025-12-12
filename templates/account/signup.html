@@ -16,14 +16,13 @@
         <p class="text-muted small">Enter your details to sign up</p>
     </div>
 
-    <form action="{% url 'account_signup' %}">
+    <form method="POST" action="{% url 'account_signup' %}">
         {% csrf_token %}
 
         <!-- Crispy form fields -->
         <div class="mb-4">
             {{ form|crispy }}
         </div>
-
         {{ redirect_field }}
 
         <!-- Submit -->
