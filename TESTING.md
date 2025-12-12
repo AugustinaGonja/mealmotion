@@ -91,13 +91,13 @@ All was clear with no errors found. Below, I’ve provided Python validations fo
 * [views.py](static/media/TESTING/views-profile-PL.png)
 
 ### Django Testing
-
+xxx
 # Performance Testing ( Wave & Lighthouse )
 **Wave Contrast Checker**
 
 I used the WAVE Contrast Checker to verify if my webpages passed accessibility standards.
-
-The only factor affected was when elements on the page had filters applied - for example, the hero image on the homepage. Otherwise, all pages pass the color contrast checker, ensuring accessibility and readability for all users.
+All pages pass the color contrast checker, ensuring accessibility and readability for all users.
+I made sure text and background colors work together.
 
 ## Performance Results 
 I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop - page by page.
@@ -165,16 +165,16 @@ I tested the website across the following devices and browsers, and it displayed
 ### Page Feature Testing
 **Logged Out**
 
-`Home Page`
+`Home/Index Page`
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| StrengthStack Title | Link redirects the user back to the Home page | Title Clicked | Redirected to Homepage | Pass |
+| Mealmotion Title | Link redirects the user back to the Home page | Title Clicked | Redirected to Homepage | Pass |
 | Home Link | Link directs the user to the Home Page | Home Link Clicked | Redirected to Home Page | Pass |
-| About Link | Link directs the user to the About Page| About Link Clicked |Redirected to About Page| Pass |
-| Login Link | Link directs the user to the Login Page | Login Link Clicked | Redirected to Login Page| Pass |
-| Get Started Buttons | Link directs the user to the Registration Page | Clicked on button | Redirected to Registration Page | Pass |
-| All buttons hover effect| Button brightness reduces on hover| Hover over button | Button brightness reduces on hover | Pass |
-| Social Media Icons Footer | Link directs the user to facebook , instagram , X or Gmail , depending on which icon clicked.| Click social media Icon | Redirected to the home page of social platform clicked. | Pass |
+| Membership Link | Link directs the user to the Registration| Membership Link Clicked |Redirected to Registration Page| Pass |
+| Profile Icon Link | Link directs the user to the Login Page | Login Link Clicked | Redirected to Login Page| Pass |
+| Shop & Recipe Catalogue buttons | Link directs the Shop and Recipes Page respectively| Clicked on button | Redirected to Registration Page | Pass |
+| All buttons hover effect| Button color changes on hover| Hover over button | Button color changes on hover | Pass |
+| Social Media Icons Footer | Link directs the user to facebook , instagram , X or Threads , depending on which icon clicked.| Click social media Icon | Redirected to the home page of social platform clicked. | Pass |
 ---
 ---
 `Login & Registration`
@@ -250,9 +250,9 @@ I tested the website across the following devices and browsers, and it displayed
 ## Solved Bugs
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
-| 1| When creating and logging into a new account, the dashboard isn’t reset and still displays the superuser’s information.| I referred to the discussion board below to determine the necessary changes. I needed to ensure that the information retrieved from the database matched the currently logged-in user. Adding **.get(user=request.user)** to the relevant views resolved the issue. <br><br>[Fix](https://stackoverflow.com/questions/64802240/django-how-to-only-display-content-made-by-a-user-to-that-same-user) |
-| 2 | When zooming out in the browser, the background/hero image doesn’t resize properly, leaving a white space between it and the footer.|The issue was caused by a fixed height in my CSS that ignored the viewport size. I fixed it by making the height viewport-relative.|
-| 3| When creating and logging into a new account , clicking the profile page will result in a Server 500 Error.<br><br>[Server Error](staticfiles/images/TESTING%20images/500%20error.png)| Resolved in the same way as the bug in row 2, by filtering the profile view with **.get(user=request.user)**.|
+| 1| Registration form not submitting , thus not creating new user account.| <br><br> method='POST' attribute missing in form. Restored this. <br><br>[Bug-1](static/media/TESTING/bugs/bug-1.png) |
+| 2 | Icon misalignment [Bug-2](static/media/TESTING/bugs/bug-2.png) |The issue was caused by a fixed height in my CSS that ignored the viewport size. I fixed it by making the height viewport-relative.|
+| 3| On mobile /tablet screen sizes , when search bar is open it comes out of the nav conatiner with icons that follow it<br><br>[Bug-3](static/media/TESTING/bugs/bug-3.png)| Resolved in the same way as the bug in row 2, by filtering the profile view with **.get(user=request.user)**.|
 
 ## Known Bugs 
 
