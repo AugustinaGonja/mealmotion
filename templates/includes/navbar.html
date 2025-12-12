@@ -1,3 +1,16 @@
+<div class="search-bar-top bg-body-tertiary">
+  <div class="container-fluid py-2">
+    <form method="GET" action="{% url 'products' %}">
+      <div class="input-group input-group-sm">
+        <input class="form-control" type="search" name="q" placeholder="Search for Products..." aria-label="Search">
+        <button class="btn search-btn text-uppercase" type="submit">
+          <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow-sm custom-nav">
   <div class="container-fluid d-flex align-items-center">
     <div class="d-flex align-items-center order-1">
@@ -48,19 +61,6 @@
 
     <!-- Nav Icons -->
     <div class="d-flex align-items-center gap-3 order-2 order-lg-3 ms-auto flex-nowrap">
-      <form method="GET" action="{% url 'products' %}" class="togglesearch" style="display: none;">
-        <div class="input-group input-group-sm">
-          <input class="form-control" type="search" name="q" placeholder="Search for Products..." aria-label="Search">
-          <button class="btn text-uppercase form-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-          </button>
-        </div>
-      </form>
-      
-      <a href="" class="text-reset search-trigger">
-        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-      </a>
-
       {% if user.is_authenticated %}
         {% if user.is_superuser %}
             <div class="nav-icon">
@@ -86,43 +86,15 @@
       <div class="nav-icon position-relative">
         <a href="{% url 'bag' %}" class="text-reset text-decoration-none">
           <i class="fa-solid fa-bag-shopping fa-lg"></i>
-        </a>
         <p class="bag-price">
           {% if grand_total %}
           £{{ grand_total|floatformat:2 }}
-          {% else %}
-          £0.00
           {% endif %}
         </p>
+        </a>
       </div>
     </div>
   </div>
 </nav>
-
-{% block extra_js %}
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const trigger = document.querySelector(".search-trigger");
-  const searchForm = document.querySelector(".togglesearch");
-  const inputField = searchForm.querySelector("input[type='search']");
-
-  trigger.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    if (searchForm.style.display === "none" || searchForm.style.display === "") {
-      // Show search form, hide icon
-      searchForm.style.display = "flex";
-      trigger.style.display = "none";
-      inputField.focus();
-    } else {
-      // Hide search form, show icon
-      searchForm.style.display = "none";
-      trigger.style.display = "inline-flex";
-    }
-  });
-});
-</script>
-{% endblock %}
-
 
 

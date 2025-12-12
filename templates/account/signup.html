@@ -3,14 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}    
-<!--Return to Home-->
-<div class="m-3">
-    <a href="{% url 'home' %}" class="btn rounded-1 fn-shop">
-        <i class="fa-solid fa-chevron-left me-2"></i>
-        Home
-    </a> 
-</div>
-<div class="container mt-2 mb-4 form-box shadow-sm" style="max-width: 450px;">
+<div class="container p-3 mt-5 mb-4 form-box shadow-sm" style="max-width: 450px;">
     <div class="text-center mt-4">
         <h2 class="text-uppercase">Create Account</h2>
         <p class="text-muted small">Enter your details to sign up</p>
@@ -39,11 +32,13 @@
     </form>
 </div>
 
-<!-- Extra spacing for crispy fields -->
 <style>
-    .form-group, .mb-3, .mb-4, .form-control {
-        margin-bottom: 1.2rem !important;
-    }
+.form-box .form-group,
+.form-box .mb-3,
+.form-box .mb-4,
+.form-box .form-control {
+    margin-bottom: 1.2rem !important;
+}
 </style>
 
 {% endblock %}
