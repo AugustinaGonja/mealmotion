@@ -40,7 +40,7 @@ p.subtitle {
     background-color: #f9f3ec !important;
     height: 64px;
     margin-top: 46.6px; 
-  z-index: 1000;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -51,7 +51,8 @@ p.subtitle {
 }
 
 #nav-banner {
-    background-color: #79b4e2;
+    background-color: #333533;
+    color: #ffffff;
     position: fixed;
     top: 110.6px;
     left: 0;
@@ -73,12 +74,11 @@ p.subtitle {
 }
 
 .bag-price {
-    font-size: 12px;
+    font-size: 8px;
 }
 
 .nav-icon {
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
     min-width: 50px;
@@ -207,7 +207,7 @@ p.subtitle {
 
 /* Search Bar */
 .search-bar-top {
-  background-color: #e9e3dc !important;
+  background-color: #79b4e2 !important;
   position: fixed;
   top: 0;
   width: 100%;
@@ -221,10 +221,16 @@ p.subtitle {
 
 
 /* Media Queries */
+@media (max-width: 576px) {
+    body {
+        padding-top: 150px; 
+    }
+} 
+
 @media (max-width: 992px) {
     .navbar .navbar-collapse { 
         position: fixed;
-        top: 64px;
+        top: 46.6px;
         left: 0;
         width: 100%;
         background-color: #f9f3ec;
