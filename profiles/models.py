@@ -4,7 +4,7 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
 
-from django_countries.fields import CountryField  # type: ignore
+from django_countries.fields import CountryField 
 
 # Create your models here.
 
