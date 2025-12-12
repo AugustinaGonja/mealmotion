@@ -252,7 +252,11 @@ I tested the website across the following devices and browsers, and it displayed
 | :--- | :--- | :--- |
 | 1| Registration form not submitting , thus not creating new user account.| <br><br> method='POST' attribute missing in form. Restored this. <br><br>[Bug-1](static/media/TESTING/bugs/bug-1.png) |
 | 2 | Icon misalignment [Bug-2](static/media/TESTING/bugs/bug-2.png) |The issue was caused by a fixed height in my CSS that ignored the viewport size. I fixed it by making the height viewport-relative.|
+<<<<<<< HEAD
 | 3| On mobile /tablet screen sizes , when search bar is open it comes out of the nav container with icons that follow it<br><br>[Bug-3](static/media/TESTING/bugs/bug-3.png)| For ease I just moved the search bar above the rest of the navbar and fixed some of the css overlaps. I also removed the JS script to toggle the searchbar when you click the search icon.|
+=======
+| 3| On mobile /tablet screen sizes , when search bar is open it comes out of the nav conatiner with icons that follow it<br><br>[Bug-3](static/media/TESTING/bugs/bug-3.png)| Resolved in the same way as the bug in row 2, by filtering the profile view with **.get(user=request.user)**.|
+>>>>>>> 989dda6d62fb9453936d1db84dbb370725bcdc6c
 
 ## Known Bugs 
 
