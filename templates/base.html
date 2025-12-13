@@ -19,7 +19,6 @@
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/7e94103858.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
   <!-- Navigation -->
   {% include 'includes/navbar.html' %}
@@ -38,5 +37,13 @@
     <!-- Extra Scripts -->
   {% block extra_js %}
   {% endblock %}
+  {% include "includes/toasts.html" %}
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.toast').forEach(toastEl => {
+      new bootstrap.Toast(toastEl, { delay: 3000 }).show();
+    });
+  });
+</script>
 </body>
 </html>
