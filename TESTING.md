@@ -104,22 +104,20 @@ I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop 
 <br>The results are as shown below.
 
 ### Desktop
-* [Home Page](staticfiles/images/TESTING%20images/home-%20lighthouse.png)
-* [Index Page](staticfiles/images/TESTING%20images/index-%20lighthouse.png)
-* [About Page](staticfiles/images/TESTING%20images/about-lighthouse.png)
-* [Login Page](staticfiles/images/TESTING%20images/login-%20lighthouse.png)
-* [Registration Page](staticfiles/images/TESTING%20images/signup-%20lighthouse.png)
-* [Profile Page](staticfiles/images/TESTING%20images/profile%20-%20lighthouse.png)
-* [Update Profile Page](staticfiles/images/TESTING%20images/profile-edit%20-%20lighthouse.png)
-* [Dashboard](staticfiles/images/TESTING%20images/dash-%20lighthouse.png)
-* [Update Workout Page](staticfiles/images/TESTING%20images/edit-workout-%20lighthouse.png)
-* [Create Workout Page](staticfiles/images/TESTING%20images/create-workout-%20lighthouse.png)
-* [Workout Details Page](staticfiles/images/TESTING%20images/view-workout-%20lighthouse.png)
-* [Update Exercise Page](staticfiles/images/TESTING%20images/edit-ex-%20lighthouse.png)
-* [Create Exercise Page](staticfiles/images/TESTING%20images/create-ex-%20lighthouse.png)
-* [Logout Page](staticfiles/images/TESTING%20images/logout%20-%20lighthouse.png)
-* [404 Error Page](staticfiles/images/TESTING%20images/404-lighthouse.png)
-* [500 Error Page](staticfiles/images/TESTING%20images/500-lighthouse.png)
+* [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F) - No errors or warnings.
+* [Index Page]() - No errors or warnings.
+* [Add & Edit Products]() - No errors or warnings.
+* [Recipes]() - No errors or warnings.
+* [Recipe Details]() - No errors or warnings.
+* [Profile]() - No errors or warnings.
+* [Shopping Bag]() - No errors or warnings.
+* [Checkout]() - No errors or warnings.
+* [Checkout Success]() - No errors or warnings.
+* [Registration]() - No errors or warnings.
+* [Login]() - No errors or warnings.
+* [Logout]() - No errors or warnings.
+* [404 Error Page]() - There are no other errors; the validator simply identified the 404 page.
+* [500 Error Page]() - No errors or warnings.<br>
 
 **To summarise :**  
 Performance scores for the Index, Home, and 404 pages were some of the lowest at 73, the lowest being the 500 page at 71, which is below the desired level but passable.
@@ -134,16 +132,56 @@ Best Practices consistently scored 100, with only a few instances ranging betwee
 
 ## Manual Testing
 ### Testing User Stories
+ Refer to each Id in README.md file <br>
+ **Accounts** 
+|     User Story ID   |     How are they achieved                                                                                         |     Image                                                            |
+|---------------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+|     1               | The website features full authentication, allowing users to create an account using a valid username and password | [Login](static/media/TESTING/user%20stories/accounts-us2.png) |
+|     2               | Users can access thier accounts anytime by logging in.                                                            | [Registration](static/media/TESTING/user%20stories/accounts-us2.png) |
+|     3               | I did not manage to implement any type of subscription service on the site.                                       |   X                                                                  |
+|     4               | I did not manage to implement any type of subscription service on the site.                                       |   X                                                                  |
+|     5               | Once user has signed up , they will get a message to verify email.                                                | [Verification](static/media/TESTING/user%20stories/accounts-us5.png) |
 
-| **User Story** | **How are they achieved?** | **Image** |
-| :--- | :--- | :--- |
-|`First Time Visitor`<br>" As a first-time visitor, I can register and log in using my email and password , so that I can securely access my account and track my workouts "|The website features full authentication, allowing users to create an account using a valid username and password.<br><br>Users can access their accounts anytime by logging in and viewing their personal dashboard.|![Login](staticfiles/images/README%20images/LoginPage.png) ![Register](staticfiles/images/README%20images/RegistrationPage.png)|
-| `Returning Visitor`<br>" As a returning visitor, I can see a list of my previous workouts on the dashboard when I log in so that I can quickly access and review past sessions." |Upon logging in, you can access your dashboard through the welcome page.<br><br>After navigating to the dashboard, the user is presented with a list of previous workouts, if any exist.|![Welcome Page](staticfiles/images/README%20images/Index.png)<br>![Dashbboard](staticfiles/images/README%20images/Dash.png) |
-| `Returning Visitor`<br>" As a returning visitor, I can create a new workout entry so that I can log my routine and begin tracking my progress." |The Create Workout button on the dashboard directs the user to a form where they can enter all relevant information. |![Create Workout Form](staticfiles/images/README%20images/create%20workout.png)|
-| `Returning Visitor`<br>" As a returning visitor, I can view the full details of a selected workout so that I can review the exercises, sets, and reps involved" |Users can click the View Details button on any workout card they have created to see the full details of the exercises and other information involved.|![View Workout](staticfiles/images/README%20images/view.png)|
-| `Returning Visitor`<br>" As a returning visitor, I can update or delete workout entries so that I can keep my records accurate and remove outdated information." |Each workout and exercise in the includes Update and Delete buttons.<br><br>The user can click the Update button to open a form where they can modify the details and save the changes.<br><br>Clicking the Delete button will prompt a confirmation alert to ensure the user wants to proceed.|![Edit](staticfiles/images/README%20images/edit%20exercise.png)<br><br>![Delete](staticfiles/images/README%20images/delete%20alert.png)|
-|`Frequent Visitor`<br> "As a frequent visitor, I can see a visual representation of my workout history so that I can easily track my progress over time."|**This feature was not implemented due to time constraints, but the plan was to use Chart.js for its development in future.**| No Image |
-|`Site Admin`<br> "As site admin I can create, read, update, and delete site information so that I can manage site content effectively.|Logged-in admins can create, view, update existing posts and delete them.| ![Admin](staticfiles/images/README%20images/admin.png) |
+ **Viewing & Nav** 
+|     User Story ID   |     How are they achieved                                                                                                                                                    |     Image                                                              |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+|     1               | The Products link in the navbar allows users to browse all available products, view details, and add items to their bag.                                                     | [Products](static/media/TESTING/user%20stories/view-us1.1.png)<br>[Products details](static/media/TESTING/user%20stories/view-us1.2.png) |
+|     2               | I did not manage to implement the sample catalogue.                                                                                                                          | X                                                                      |
+|     3               | The quantity selector on the details page enables quick addition or removal of a specific item from the bag.                                                                 | [Selector](static/media/TESTING/user%20stories/view-us3.png)           |
+|     4               | The Recipe link in the navbar allows users to browse all available recipes and view details.                                                                                 | [Recipes](static/media/TESTING/user%20stories/view-us4.1.png) <br> [Recipes details](static/media/TESTING/user%20stories/view-us4.2.png)       |
+|     5               | Each recipe includes category badges to help users find options that suit their preferences. Due to time constraints, category-based sorting was not implemented.            | X                                                                      |
+|     6               | Users can select product categories from the navbar dropdown or sort by category on the product page.                                                                        |   [Category](static/media/TESTING/user%20stories/view-us6.png)                                                                   |
+|     7               | Users can use the search bar at the top of the page to find products using keywords.                                                                                         |[Search](static/media/TESTING/user%20stories/view-us7.png)                                                                        |
+|     8               | Users can click the shopping bag icon in the navbar to be directed to the shopping bag page.                                                                                 |  [Bag](static/media/TESTING/user%20stories/view-us8.png)                                                                      |
+|     9               | The quantity selector in the shopping bag, along with the delete (bin) icon, allows for easy updating of items and prices.                                                   |[Selector Bag](static/media/TESTING/user%20stories/view-us4.2.png)                                                                        |
+|     11              | A subscription service was not implemented on the site. As a result, most features are accessible to guest users, with the exception of the profile and order history pages. |   X                                                                    |
+|     12              | I did not manage to implement favouriting recipes                                                                                                                            |   X                                                                    |
+|     13              | I did not manage to implement product reviews form.                                                                                                                          |   X                                                                    |
+|     14              | I did not include the quiz.                                                                                                                                                  |   X                                                                    |
+
+**Searching & Filtering Products:**
+|     User Story ID   |     How are they achieved                                                                                                   |     Image                                                              |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+|     1               | Users can select the “Sort By…” dropdown on the product page to choose how products are ordered.                            | [Sort by](static/media/TESTING/user%20stories/sorting-us1.png) |
+|     2               | Users can see the total number of products on the page at all times, even when products are filtered by search or category. | [Results](static/media/TESTING/user%20stories/sorting-us2.png)                                                                   |
+
+**Checkout:**
+|     User Story ID   |     How are they achieved                                                                                                         |     Image                                                              |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+|     1               | Users can navigate to the checkout page from the shopping bag page.                                                               | [Checkout](static/media/TESTING/user%20stories/check-us1.png) |
+|     2               | Users can update items by clicking the “Edit Bag” link, which redirects them back to the shopping bag page.                       | [Edit Bag](static/media/TESTING/user%20stories/check-us2.png)                                                                      |
+| 3                   | Users can safely and securely complete purchases by entering their details through the Stripe payment form.                       |[Payment](static/media/TESTING/user%20stories/check-us3.png)                                                                         |
+| 4                   | After making a payment, users see a receipt in the browser with all order summary.                                                |[Receipt](static/media/TESTING/user%20stories/check-us4.png)                                                                         |
+| 5                   | After making a payment, users see a receipt in the browser and are informed that it will be emailed to the address they provided. | As above                                                                       |
+| 6                   | If a user is logged in, they can access their profile to view their order history, including recent and past orders.              | [Receipt](static/media/TESTING/user%20stories/check-us5.png)                                                                          |
+
+**Site Admin:**
+|     User Story ID   |     How are they achieved                                                                                               |     Image                                                              |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+|     1               | Logged-in admins can navigate to product management by clicking the cogs icon, allowing them to add new products.       | [Product Manage - Add](static/media/TESTING/user%20stories/admin-us1.png) |
+|     2               | Logged-in admins can update products by clicking the edit or delete icons in the catalog or on the product detail page. | [Product Manage - Update](static/media/TESTING/user%20stories/admin-us2.1.png)<br>[Product Manage - Update](static/media/TESTING/user%20stories/admin-us3.png)                                                                   |
+| 3                   | As above                                                                                                                | As above                                                               |
+
 ## Full Testing
 ### Devices Tested On
 
@@ -165,7 +203,7 @@ I tested the website across the following devices and browsers, and it displayed
 ### Page Feature Testing
 **Logged Out**
 
-`Home/Index Page`
+`Home`
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Mealmotion Title | Link redirects the user back to the Home page | Title Clicked | Redirected to Homepage | Pass |
@@ -186,61 +224,98 @@ I tested the website across the following devices and browsers, and it displayed
 | Password Field|Message prompting that password Field must not be empty | Field not filled out | User Presented with a small popup "Please Fill In This Field." | Pass |
 | Incorrect Entry of both Fields | Message prompting that username and Password must be correct | Entered correct username and password|User Presented with a "The username and/or password you specified are not correct."| Pass |
 | Password (again)* Field | Throws error message if Passwords dont match | Unidentical password entered | User Presented with message , "You must type the same password each time."| Pass |
+
 ---
 ---
+
+`Products Page`
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Click Product | Link directs the user to the specific product detail page | Product clicked | Redirected to product detail page| Pass |
+| Filter by category | Choosing any of dropdown categories will direct to page with only that category of product | Category clicked | Redirected to Category Page| Pass |
+| Sort by | Sorting by any of the options in dropdown will reorder all products on page accordingly | Sort by option clicked | Products page reordered by option chosen| Pass |
+| Search bar | Plugging keywords into searh will return products that match on page |Searched using keywords| Products with matching keyword in description or title returned to page| Pass |
+| Display product qty| Qty of products always visible at top of page| Filter/search for products |Qty of products displayed and changes depending on search/filter| Pass |
+| Back to top| Scrolls back to top of page when button clicked | Clicked BTT Button | Page scrolls back to the top| Pass | 
+
+---
+---
+
+`Product Details Page`
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Continue Shopping Button | Link directs the user back to product page | Button clicked | Redirected to product page| Pass |
+| QTY Selector | Increments & decrement item qty | Clicked each button | Item qty updated| Pass |
+| Add to bag | Adds qty of items selected to shopping bag | Add to bag clicked | Items added to bag| Pass |
+| Bag Icon | Changes color and animates to show something is in bag |Add something to bag|Bag icon color changes and adopts animation| Pass |
+
+---
+---
+
+`Recipe & Recipe Details Page`
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Click Recipe | Link directs the user to the specific recipe detail page | Recipe clicked | Redirected to recipe detail page| Pass |
+| Home Link | Link directs the user to the Home Page | Home Link Clicked | Redirected to Home Page | Pass |
+| Back to top| Scrolls back to top of page when button clicked | Clicked BTT Button | Page scrolls back to the top| Pass | 
+
+---
+---
+
+`Shopping Bag Page`
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Bag Icon | Link directs the user to the shopping bag | Bag icon clicked | Redirected to shopping bag page| Pass |
+| QTY Selector | Increments & decrement item qty | Clicked each button | Item qty updated with its subtotal , delivery price and grand total| Pass |
+| Bin Icon | Delete item from bag | Bin icon clicked | Items deleted | Pass |
+| Delivery | Message displayed if bag cost meet the free delivery requirements and vice versa| Updated items using selector | Message changes when bag total is below or above delivery req| Pass |
+| Go to Checkout |  Link directs the user to the checkout | Clicked Checkout Button | Redirected to checkout page| Pass | 
+
+---
+---
+
+`Checkout Page`
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Payment Form | If any mandatory information is not filled , message pop ups | Form not filled correctly | "Please fill in this field" message | Pass |
+| Email Field | If email field not filled correct, message pops up | Email field incorrectly filled correctly | "Please include an @..." message | Pass |
+| Place Order button | Accept payment | Valid card and form details filled | Directed to checkout success and payment accepted | Pass |
+| Invalid Card details | Invalid card details flash red | Invalid Card details filled | Invalid card details flash red | Pass |
+| Edit Bag |  Link directs the user back to bag to edit | Clicked edit bag Button | Redirected to shopping bag page| Pass | 
+| Save details |  If logged in check save details to have them in profile and prefilled next order | Login, check save details and complete order | Details entered reflected in profile | Pass | 
+
 **Logged In**
 
 `Index Page`
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Dashboard Link | Link directs the user to the Dashboard | Dashboard Link Clicked | Redirected to Dashboard Page | Pass |
 | Profile Link| Link directs the user to the Profile Page| Profile Link Clicked |Redirected to Profile Page| Pass |
 | Signout Link | Link directs the user to the Signout Page | Signout Link Clicked | Redirected to Signout Page| Pass |
+
 ---
 ---
-`Profile & Update Profile Page`
+
+`Profile`
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Edit Profile Button | Button directs the user to the Edit Profile Form | Button Clicked | Redirected to Edit Profile Form | Pass |
-| Upload Profile Image| Clicking "Choose File" opens your file explorer, allowing you to select and upload an image.| Choose File clicked | Choose File opens the file explorer. | Pass |
-| Save Button |Displays a confirmation message, and if confirmed, saves the changes. |Save button clicked | Changes saved after confirmed | Pass |
+| Profile Icon | Link directs the user to the Personal Profile | Profile Icon Clicked | Redirected to Profile Page | Pass |
+| Edit Information | Profile form info updated | Changed info in profile form and save | Profile form info updated | Pass |
+|View Order History | Order history displayed in profile with relevant info | Make order ,recieve confirmation and navigate to profile | Order history updated | Pass |
 ---
 ---
-`Dashboard`
+
+**Login using admin credentials**
+`Admin Management`
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| No Workouts | On first visit to the Dashboard page after creating a new account, display a message stating no workouts are posted yet. | Dashboard Button Clicked | User Presented with message on page , "No Workouts Added yet" | Pass |
-| Create New Workout Button | Button directs the user to the Create Workout Form | Button Clicked | Redirected to Create Workout Form | Pass |
-| View Workout Button| Button directs the user to the Workout Details Page | Button Clicked | Redirected to Create Workout Details Page | Pass |
-| Delete Workout Button|Displays a confirmation message, and if confirmed, deletes the workout. |Button Clicked | Workout Deleted | Pass |
-| Edit Workout Button|Button directs the user to the Edit Workout Form |Button Clicked | Redirected to Edit Workout Form | Pass |
+| Profile Icon | Link directs the user to the Personal Profile | Profile Icon Clicked | Redirected to Profile Page | Pass |
+| Add new Product | Add new Product to product page | Filled mandatory info and save, navigate to product page to see new product | New product added | Pass |
+| Edit Product | Change details of product | Clicked edit button , updated details and confirmed | Product edited | Pass |
+| Delete Product|Delete Product|Clicked delete button| Product deleted| Pass |
+
 ---
 ---
-`Create & Update Workout Pages `
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| Asterisked Fields| All these fields must be filled out or message prompted | Save Button Clicked | User Presented with message , "This field is required."| Pass |
-| Save Workout Button| The button redirects the user to the Dashboard, where they can view the new workout at the top of the list. | Button Clicked | Redirects to the Dashboard, with the new workout displayed as the first item on the list. | Pass |
-| Fields Prepopulated on Edit Form|Displays form with previously entered information |Button Clicked | Displays a form with the previously entered information, which can be edited.| Pass |
----
----
-`Workout Details Page `
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| No Exercises | On first visit to the Workout Details page after creating a workout, display a message stating no exercises are posted yet. | New workout Created & View Workout Button Clicked | User Presented with message on page , "No Exercises Added yet ! Add New Exercises Below." | Pass |
-| Add Exercise Button | Button directs the user to the Add Exercise Form | Button Clicked | Redirected to Add Exercise Form | Pass |
-| Delete Exercise Button|Displays a confirmation message, and if confirmed, deletes the exercise. |Button Clicked | Exercise Deleted | Pass |
-| Edit Exercise Button|Button directs the user to the Edit Exercise Form |Button Clicked | Redirected to Edit Exercise Form | Pass |
----
----
-`Create & Update Exercise Pages`
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| Asterisked Fields| All these fields must be filled out or message prompted | Save Button Clicked | User Presented with message , "This field is required."| Pass |
-| Save Exercise Button| The button redirects the user to the Workout Details, where they can view the new exercise. | Button Clicked | Redirects to the Workout Details, with the new exercise displayed on the list. | Pass |
-| Fields Prepopulated on Edit Form |Displays form with previously entered information |Button Clicked | Displays a form with the previously entered information, which can be edited.| Pass |
----
----
+
 `Logout Page`
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
@@ -250,15 +325,16 @@ I tested the website across the following devices and browsers, and it displayed
 ## Solved Bugs
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
-| 1| Registration form not submitting , thus not creating new user account.| <br><br> method='POST' attribute missing in form. Restored this. <br><br>[Bug-1](static/media/TESTING/bugs/bug-1.png) |
-| 2 | Icon misalignment [Bug-2](static/media/TESTING/bugs/bug-2.png) |Adjusted margins and font size of bag price to fix misalignment.|
-| 3| On mobile /tablet screen sizes , when search bar is open it comes out of the nav container with icons that follow it<br><br>[Bug-3](static/media/TESTING/bugs/bug-3.png)| For ease I just moved the search bar above the rest of the navbar and fixed some of the css overlaps. I also removed the JS script to toggle the searchbar when you click the search icon.|
+| 1| Registration form not submitting , thus not creating new user account.| method='POST' attribute missing in form. Restored this. <br>[Bug-1](static/media/TESTING/bugs/bug-1.png) |
+| 2 | Icon misalignment<br>[Bug-2](static/media/TESTING/bugs/bug-2.png) |Adjusted margins and removed bag price. Chose to indicate that bag has items by adding an animation and color change to icon.|
+| 3| On mobile /tablet screen sizes , when search bar is open it comes out of the nav container with icons that follow it<br>[Bug-3](static/media/TESTING/bugs/bug-3.png)| For ease I just moved the search bar above the rest of the navbar and fixed some of the css overlaps. I also removed the JS script to toggle the searchbar when you click the search icon.|
+| 4| When in admin and trying to edit products an error message displays due to cloudinary fields <br>[Bug-4](static/media/TESTING/bugs/bug-5.png)||
 
 ## Known Bugs 
 
 | No | Bug | Issue |
 | :--- | :--- | :--- |
-| 1 | On the login page, if you refresh after receiving an invalid username or password error, the error message should disappear - but currently, it remains displayed.<br>[Login](staticfiles/images/TESTING%20images/Login%20Error.png)| X |
+| 1| On mobile screen sizes , qty selector stacks vertically | [Bug-1](static/media/TESTING/bugs/bug-4.png)|
 | 2 | The "Remember me" on the Login and Registration page box does not save account details.| X |
 ---
 [Back to the Top](#mealmotion---testing)
