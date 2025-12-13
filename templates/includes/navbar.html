@@ -20,15 +20,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-        <!-- Logo -->
+      <!-- Logo -->
       <a class="navbar-brand d-flex align-items-center mb-0" href="{% url 'home' %}">
         <i class="fa-solid fa-utensils fa-sm m-3"></i>
         MEALMOTION
       </a>
-    </div>  
+    </div>
 
-      <!-- Collapsible Content -->
-     <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-center" id="mainNav">
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-center" id="mainNav">
       <ul class="navbar-nav mx-auto gap-2 gap-lg-3 text-center align-items-center">
         <!--Home Link-->
         <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
@@ -40,19 +40,20 @@
             <li><a class="dropdown-item fw-bold" href="{% url 'products' %}">All Products</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplements</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a>
+            </li>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="{% url 'recipes' %}">Recipe Catalouge</a>
+          <a class="nav-link fw-bold" href="{% url 'recipes' %}">Recipe Catalogue</a>
         </li>
 
         <!-- Regular Links -->
         {% if user.is_authenticated %}
         <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
-        {% else %}        
+        {% else %}
         <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Membership</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
         {% endif %}
@@ -62,28 +63,29 @@
     <!-- Nav Icons -->
     <div class="d-flex align-items-center gap-3 order-2 order-lg-3 ms-auto flex-nowrap">
       {% if user.is_authenticated %}
-        {% if user.is_superuser %}
-            <div class="nav-icon">
-                <a href="{% url 'add_product' %}" class="text-reset">
-                    <i class="fa-solid fa-user fa-lg"></i>
-                </a>
-                <p>Manage</p>
-            </div>
-        {% else %}
-            <div class="nav-icon">
-              <a href="{% url 'profile' %}" class="text-reset">
-                  <i class="fa-solid fa-user fa-lg"></i>
-              </a>
-              <p>My Account</p>
-          </div>
-        {% endif %}
-    {% else %}
-        <a href="{% url 'account_login' %}" class="text-reset">
-            <i class="fa-solid fa-user fa-lg"></i>
+      {% if user.is_superuser %}
+      <div class="nav-icon">
+        <a href="{% url 'add_product' %}" class="text-reset">
+          <i class="fa-solid fa-gears fa-xl mx-3"></i>
         </a>
-    {% endif %}
+        <a href="{% url 'profile' %}" class="text-reset">
+          <i class="fa-solid fa-user fa-lg"></i>
+        </a>
+      </div>
+      {% else %}
+      <div class="nav-icon">
+        <a href="{% url 'profile' %}" class="text-reset">
+          <i class="fa-solid fa-user fa-lg"></i>
+        </a>
+      </div>
+      {% endif %}
+      {% else %}
+      <a href="{% url 'account_login' %}" class="text-reset">
+        <i class="fa-solid fa-user fa-lg"></i>
+      </a>
+      {% endif %}
 
-      
+
       <div class="nav-icon position-relative">
         <a href="{% url 'bag' %}" class="text-reset text-decoration-none">
           {% if grand_total %}
@@ -96,5 +98,3 @@
     </div>
   </div>
 </nav>
-
-
