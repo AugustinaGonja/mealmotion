@@ -102,10 +102,11 @@
                     <p class="fw-bold fs-6">£ {{ product.price }}</p>
                     <!--Product Management-->
                     {% if request.user.is_superuser %}
-                        <small>
-                            <a href="{% url 'edit_product' product.id %}">Edit</a>
-                            <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
-                        </small>
+                    <small>
+                        <a href="{% url 'edit_product' product.id %}">Edit</a>
+                        <a href="{% url 'delete_product' product.id %}" class="text-danger"
+                            onclick="return confirm('Are you sure you want to delete ?')">Delete</a>
+                    </small>
                     {% endif %}
                 </div>
             </a>
