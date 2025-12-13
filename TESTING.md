@@ -328,7 +328,8 @@ I tested the website across the following devices and browsers, and it displayed
 | 1| Registration form not submitting , thus not creating new user account.| method='POST' attribute missing in form. Restored this. <br>[Bug-1](static/media/TESTING/bugs/bug-1.png) |
 | 2 | Icon misalignment<br>[Bug-2](static/media/TESTING/bugs/bug-2.png) |Adjusted margins and removed bag price. Chose to indicate that bag has items by adding an animation and color change to icon.|
 | 3| On mobile /tablet screen sizes , when search bar is open it comes out of the nav container with icons that follow it<br>[Bug-3](static/media/TESTING/bugs/bug-3.png)| For ease I just moved the search bar above the rest of the navbar and fixed some of the css overlaps. I also removed the JS script to toggle the searchbar when you click the search icon.|
-| 4| When in admin and trying to edit products an error message displays due to cloudinary fields <br>[Bug-4](static/media/TESTING/bugs/bug-5.png)||
+| 4| When in admin and trying to edit products an error message displays due to cloudinary fields <br>[Bug-4](static/media/TESTING/bugs/bug-5.png)| I just needed to set the cloudinary environment variables in my env.py file - this got rid of my error. |
+| 5| Failed to deploy my latest version of the project on heroku due to static files error. <br>[Bug-5](static/media/TESTING/bugs/bug-6.png)| I just needed to set the cloudinary environment variables in my env.py file - this got rid of my error. |
 
 ## Known Bugs 
 
