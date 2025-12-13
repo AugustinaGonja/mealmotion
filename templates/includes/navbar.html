@@ -83,14 +83,14 @@
         </a>
     {% endif %}
 
+      
       <div class="nav-icon position-relative">
-        <a href="{% url 'bag' %}" class="text-reset text-decoration-none mt-3">
-          <i class="fa-solid fa-bag-shopping fa-lg"></i>
-        <p class="bag-price">
+        <a href="{% url 'bag' %}" class="text-reset text-decoration-none">
           {% if grand_total %}
-          £{{ grand_total|floatformat:2 }}
+          <i class="fa-solid fa-bag-shopping fa-bounce fa-lg bag"></i>
+          {% else %}
+          <i class="fa-solid fa-bag-shopping fa-lg"></i>
           {% endif %}
-        </p>
         </a>
       </div>
     </div>

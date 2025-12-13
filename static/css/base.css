@@ -73,21 +73,19 @@ p.subtitle {
     background-color: transparent !important;
 }
 
-.bag-price {
-    font-size: 8px;
+.bag {
+    color: #ec4e20;
 }
 
 .nav-icon {
     display: flex;
     align-items: center;
     text-align: center;
-    min-width: 50px;
-}
-.nav-icon p {
-    margin: 2px 0 0;
-    font-size: 12px;
 }
 
+.navbar-toggler{
+    z-index: 10000;
+}
 /* Buttons */
 .fn-shop, .form-btn {
     background-color: #333533 !important;
@@ -174,7 +172,7 @@ p.subtitle {
 }
 
 .delivery-box {
-    background: #f8f9fa;
+    background: #ffff;
     padding: 20px;
     border-radius: 8px;
 }
